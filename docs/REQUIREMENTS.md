@@ -9,45 +9,46 @@
 
 **Project Name:** Test - Test
 
-**Description:** A project with minimal available details, likely in the planning stage, involving testing activities for a client in the Aerospace & Defense industry.
+**Description:** A project with minimal provided details, likely in the planning phase, involving testing activities.
 
 ### Business Objectives
 - Complete testing activities as per project scope
-- Ensure client requirements are met with quality and efficiency
+- Ensure client requirements are met within estimated hours
 
 ### Success Criteria
 - Successful completion of testing within the estimated hours
-- Client approval and sign-off on testing deliverables
-- Adherence to project timeline and budget
+- Client approval of testing outcomes
+- Adherence to project schedule and budget
 
 ## 2. Stakeholders
 
 ### Hamza Farooq
-**Role:** Client CEO (Primary Contact)
+**Role:** Primary Client Contact / CEO
 **Responsibilities:**
 - Provide project requirements and feedback
-- Approve testing outcomes
-- Coordinate communication
+- Approve deliverables
+- Coordinate communication between client and project team
 
-### Hamza Farooq (Sales & Delivery Lead)
-**Role:** Internal Project Lead
+### hamza farooq
+**Role:** Sales Rep (Project), Delivery Lead (Opportunity)
 **Responsibilities:**
-- Manage project planning and execution
-- Coordinate with client and internal teams
-- Ensure project scope and deliverables are met
+- Manage sales activities
+- Coordinate project delivery
+- Liaise with client for project scope and requirements
 
 ### Usama Kaleem
-**Role:** Technical Lead
+**Role:** Tech Lead (Project), Sales Rep (Opportunity)
 **Responsibilities:**
-- Oversee technical aspects of testing
-- Ensure technical requirements are implemented
-- Coordinate with development and testing teams
+- Lead technical aspects of the project
+- Support sales and opportunity management
+- Ensure technical feasibility and requirements are met
 
 ### Unnamed Delivery Lead
-**Role:** Delivery Lead
+**Role:** Delivery Lead (Project)
 **Responsibilities:**
-- Manage day-to-day project delivery
-- Coordinate resources and timelines
+- Oversee project execution
+- Coordinate internal teams
+- Ensure project milestones are achieved
 
 ## 3. Functional Requirements
 
@@ -55,78 +56,74 @@
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-PROJ-001 | Ability to define and track project milestones and timelines | mvp | Project details |
-| FR-PROJ-002 | Manage project scope, including testing phases and deliverables | mvp | Project description |
+| FR-PROJ-001 | Ability to track project status, health, and progress | mvp | CRM and project overview |
+| FR-PROJ-002 | Manage project milestones and deadlines | mvp | Project details |
 
-### Resource Management
-
-| ID | Description | Priority | Source |
-|---|---|---|---|
-| FR-RES-001 | Assign and manage team members and roles | mvp | Team listing |
-
-### Client Communication & Feedback
+### Client & Stakeholder Management
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-COM-001 | Provide a portal or interface for client feedback and approvals | phase2 | Client engagement needs |
+| FR-CLNT-001 | Maintain contact details and communication logs for client | mvp | Client info |
+| FR-CLNT-002 | Capture client goals, feedback, and approval status | phase2 | Client goals and project description |
 
-### Testing Management
+### Opportunity & Sales Management
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-TEST-001 | Define testing scope, cases, and acceptance criteria | mvp | Project description |
-| FR-TEST-002 | Track testing progress and results | mvp | Project goal |
+| FR-OPP-001 | Track opportunity details including amount, stage, description, and dates | mvp | Opportunity info |
+| FR-OPP-002 | Manage project funding and billing details | mvp | Opportunity info |
+
+### Resource & Team Management
+
+| ID | Description | Priority | Source |
+|---|---|---|---|
+| FR-RES-001 | Maintain team member roles, responsibilities, and contact info | mvp | Team info |
 
 ## 4. Non-Functional Requirements
 
 ### Performance
-- System should support concurrent users involved in project management and testing activities
+- System should support multiple concurrent users for project management
 
 ### Security
-- Data security and confidentiality for client information and project data
+- Ensure secure access to project data and client information
 
-### Usability
-- User interface should be accessible and easy to navigate for all stakeholders
-
-### Availability & Reliability
-- System should be available 99.9% of the time during working hours
+### Data Management
+- Data should be stored securely with regular backups
 
 ## 5. Constraints
 
-- **Timeline:** Project start and end dates are set to 9999-09-09, which are placeholder dates indicating an undefined schedule.
-- **Budget:** Funding is via AWS Credits, which may impose limitations on resource usage and scope.
-- **Technical:** Hosting platform is Azure, requiring compatibility considerations.
-- **Regulatory:** No specific regulatory constraints provided; assume compliance with industry standards for aerospace & defense.
+- **Timeline:** Project start and end dates are set to 9999-09-09, which appears placeholder or incorrect.
+- **Budget:** Budget is tied to opportunity amount of $2,333.00
+- **Technical:** Hosting platform is Azure; billing via a specific billing ID, funding via AWS Credits.
+- **Resource:** Limited team members listed; capacity and availability are not specified.
 
 ## 6. Assumptions
 
-- The project scope primarily involves testing activities, with no detailed functional requirements provided.
-- Client goals and roadmap are not defined, assuming they are not critical for initial planning.
-- The placeholder dates (9999-09-09) imply that actual project timelines are yet to be defined.
+- Project scope is primarily testing activities based on project name and description
+- Project timeline is placeholder (dates in 9999), assuming actual dates will be provided later
+- Client goals and detailed requirements are not provided, assuming they will be clarified later
 
 ## 7. Dependencies
 
-- Hosting platform is Azure; dependent on Azure platform stability and access.
-- Funding via AWS Credits; dependent on AWS credit availability and policies.
+- Hosting platform Azure, billing system, and funding via AWS Credits
+- Client provided minimal project details; further requirements depend on client input
 
 ## 8. Identified Risks
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Unclear project scope and requirements may lead to scope creep and delays. | high | Establish detailed scope and requirements before proceeding further. |
-| Undefined project timeline and deliverables due to placeholder dates. | high | Define clear project schedule and milestones. |
-| Limited client input and detailed requirements may result in misaligned expectations. | medium | Schedule requirement gathering sessions with client. |
+| Unclear project scope and requirements due to minimal documentation | high | Schedule a detailed requirements gathering session with client |
+| Placeholder dates may cause scheduling issues | medium | Obtain confirmed project start and end dates |
 
 ## 9. Open Questions
 
 *The following questions need to be answered to proceed:*
 
-- **[Q1]** (scope) What are the specific testing activities and deliverables expected from this project?
-- **[Q2]** (scope) What are the detailed client goals and success criteria for this project?
-- **[Q3]** (timeline) What are the actual project start and end dates, given that placeholder dates are currently set?
-- **[Q4]** (regulatory) Are there any specific compliance or regulatory standards that the project must adhere to?
-- **[Q5]** (technical) What are the detailed functional requirements for testing, including scope, cases, and acceptance criteria?
-- **[Q6]** (technical) What are the expected performance and security standards for the system supporting this project?
+- **[Q1]** (scope) What are the specific testing activities and objectives for this project?
+- **[Q2]** (timeline) What are the actual project start and end dates?
+- **[Q3]** (scope) What are the detailed client goals and acceptance criteria?
+- **[Q4]** (technical) Are there any specific security or compliance requirements for handling client data?
+- **[Q5]** (scope) What are the detailed functional requirements for the testing activities?
 
 ---
 
