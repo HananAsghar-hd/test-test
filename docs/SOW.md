@@ -10,16 +10,17 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This Statement of Work (SOW) defines the scope, deliverables, responsibilities, and management processes for the Test - Test project, establishing a formal agreement between the client and provider.
+This Statement of Work (SOW) defines the scope, deliverables, milestones, roles, and responsibilities for the 'Test - Test' project, supporting project planning and contractual commitments.
 
 ### 1.2 Background
-The project aims to develop a cloud-based testing management platform for aerospace & defense testing activities, with initial high-level scope and placeholder timelines.
+The project involves minimal initial details, primarily focusing on establishing a foundation for testing activities and stakeholder management, pending further requirements.
 
 ### 1.3 Objectives
 
-- Establish a project management and testing platform
-- Enable resource and stakeholder management
-- Support testing activities and reporting
+- Define project scope and deliverables
+- Establish project milestones and timelines
+- Clarify roles and responsibilities
+- Set communication and change management processes
 
 ## 2. Scope of Work
 
@@ -27,92 +28,70 @@ The project aims to develop a cloud-based testing management platform for aerosp
 
 | Item | Description |
 |------|-------------|
-| Project planning and management setup | Establish project milestones, scope, and schedule |
-| Development of core modules | Project dashboard, resource management, testing management |
-| Stakeholder communication setup | Feedback portals and reporting tools |
-| Testing and validation of system functionalities | - |
+| Project management setup | Establish project tracking and milestone management |
+| Stakeholder communication framework | Implement stakeholder contact and feedback logging |
+| Opportunity and funding tracking setup | Configure opportunity and billing management |
 
 ### 2.2 Out of Scope
 
 | Item | Reason |
 |------|--------|
-| Hardware procurement | Not within project scope |
-| Development of industry-specific compliance features beyond aerospace standards | Out of initial scope |
+| External system integrations | Not specified or required at this stage |
+| Development beyond initial setup | Pending detailed requirements |
 
 ### 2.3 Assumptions
 
-- Client will provide timely feedback and requirements clarification
-- Azure and AWS platforms will be available and stable
-- Funding via AWS Credits will be sufficient for scope
+- Client will provide detailed requirements in future phases
 
 ## 3. Deliverables
 
 | ID | Deliverable | Description | Phase |
 |----|-------------|-------------|-------|
-| D-001 | Project Management & Planning Setup | Initial project plan, milestones, scope documentation, and resource allocation plan. | mvp |
-| D-002 | Core System Modules | Developed project dashboard, resource management, and testing activity modules. | mvp |
-| D-003 | Stakeholder Feedback Portal | Web portal for client feedback, approvals, and reporting. | phase2 |
-| D-004 | Final Testing & Validation Report | Comprehensive testing results, system validation, and sign-off documentation. | - |
+| D-001 | Project Management Dashboard | A web-based dashboard displaying project status, milestones, and progress indicators. | mvp |
+| D-002 | Stakeholder Communication Portal | A portal for stakeholders to view updates, provide feedback, and approve deliverables. | mvp |
+| D-003 | Opportunity & Funding Management Module | Module to track opportunity details, funding, and project stage. | phase2 |
 
 ### 3.1 Acceptance Criteria
 
-**D-001: Project Management & Planning Setup**
-- Approval of project plan by client
+**D-001: Project Management Dashboard**
+- Dashboard is functional, displays accurate data, and supports multiple users.
 
-**D-002: Core System Modules**
-- Functionality tested and accepted by client
+**D-002: Stakeholder Communication Portal**
+- Portal is accessible, feedback logging works, and approval statuses are visible.
 
-**D-003: Stakeholder Feedback Portal**
-- Portal accessible and functional for client review
-
-**D-004: Final Testing & Validation Report**
-- Client approval of testing outcomes
+**D-003: Opportunity & Funding Management Module**
+- Accurate opportunity data management and funding status updates.
 
 ## 4. Milestones
 
-### M-001: Project Initiation & Planning
+### M-001: Initial Setup Complete
 
-**Description:** Approval of project scope, schedule, and initial setup.
+**Description:** Completion of project management, stakeholder portal, and opportunity modules for MVP.
 
 **Associated Deliverables:**
 - D-001
-
-### M-002: Core Modules Development Complete
-
-**Description:** Completion of project dashboard, resource, and testing modules.
-
-**Associated Deliverables:**
 - D-002
 
-### M-003: Stakeholder Feedback Portal Launch
+### M-002: Phase 2 Module Delivery
 
-**Description:** Portal available for client feedback and review.
+**Description:** Delivery of opportunity & funding tracking module.
 
 **Associated Deliverables:**
 - D-003
-
-### M-004: System Validation & Sign-off
-
-**Description:** Final testing, validation, and client approval.
-
-**Associated Deliverables:**
-- D-004
 
 ## 5. Roles and Responsibilities
 
 ### 5.1 Provider Responsibilities
 
-- Develop system modules as per specifications
-- Coordinate testing and validation
-- Provide regular status updates
-- Manage change requests
+- Develop and deliver system modules as per specifications
+- Coordinate testing and deployment
+- Provide documentation and support
 
 ### 5.2 Client Responsibilities
 
-- Provide requirements and feedback
-- Review and approve deliverables
-- Participate in testing and validation
-- Facilitate access to necessary resources
+- Provide detailed requirements and feedback
+- Approve deliverables
+- Ensure timely communication
 
 ## 6. Communication Plan
 
@@ -120,22 +99,22 @@ The project aims to develop a cloud-based testing management platform for aerosp
 
 | Type | Frequency | Participants |
 |------|-----------|--------------|
-| Status Update | Bi-weekly | Client, Project Lead |
-| Requirement Review | As needed | Client, Technical Lead |
+| Status Update | Weekly | Project Manager, Client Lead |
+| Milestone Review | At milestone completion | All stakeholders |
 
 ### 6.2 Reporting
-Weekly progress reports via email, milestone status updates in project management tools.
+Progress reports delivered bi-weekly via email
 
 ### 6.3 Escalation Process
-Issues will be escalated to project sponsors if unresolved within 3 business days.
+Issues escalated to project manager and client contact within 24 hours
 
 ## 7. Change Management
 
 ### 7.1 Change Request Process
-All change requests must be submitted in writing, assessed for impact, and approved by both parties before implementation.
+All change requests must be documented and approved via formal change request forms.
 
 ### 7.2 Impact Assessment
-Each change will be evaluated for scope, schedule, and cost implications, with adjustments documented and approved.
+Each change will be analyzed for scope, schedule, and cost impact before approval.
 
 ---
 
