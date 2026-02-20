@@ -23,23 +23,21 @@
 
 ## Executive Summary
 
-This architecture provides a scalable, secure, and maintainable cloud-based project management and testing platform tailored for aerospace & defense testing projects. It leverages Azure for hosting and AWS Credits for resource provisioning, with a modular microservices approach to support current and future features.
+This architecture provides a scalable, secure, and maintainable web-based project management system tailored for testing activities. It leverages cloud services (Azure for hosting, AWS Credits for billing) with a modular microservices approach to support current and future functionalities.
 
 ### Key Decisions
-- Adopt a microservices architecture for flexibility and scalability
-- Use Azure as the primary hosting environment with Azure App Service and Azure SQL Database
-- Utilize AWS Credits for resource provisioning, primarily for initial compute and storage needs
-- Implement a web-based UI with React for responsiveness and usability
-- Secure the system with OAuth2/OIDC for authentication and RBAC for authorization
+- Adopt a microservices architecture for modularity and scalability
+- Use Azure cloud platform for hosting and deployment
+- Implement role-based access control (RBAC) for security
+- Utilize REST APIs with WebSocket for real-time updates
 
 ### Technology Highlights
-- Azure Cloud Platform for hosting and management
-- React.js for frontend development
-- FastAPI (Python) for backend microservices
+- Azure App Service / Azure Kubernetes Service (AKS)
+- React.js for frontend
+- FastAPI (Python) for backend services
 - PostgreSQL for relational data storage
 - Redis for caching
-- OAuth2 with Azure AD B2C for authentication
-- Kubernetes (AKS) for container orchestration (future scalability)
+- Elasticsearch for search capabilities (future consideration)
 
 ## System Architecture
 
@@ -47,110 +45,91 @@ This architecture provides a scalable, secure, and maintainable cloud-based proj
 
 ### Architecture Overview
 
-The system comprises a set of loosely coupled microservices hosted on Azure, communicating via REST/HTTP and WebSocket for real-time updates. The frontend is a React SPA hosted on Azure App Service, connecting to backend APIs. Data is stored in Azure SQL Database, with Redis caching. External integrations include Azure AD B2C for authentication and optional AWS resources for initial compute/storage.
+The system comprises a frontend SPA hosted on Azure App Service, communicating via REST and WebSocket with backend microservices deployed on AKS. Backend services interact with PostgreSQL for data persistence, Redis for caching, and external services like Azure for hosting and AWS Credits for billing. User authentication and authorization are managed via RBAC integrated with Azure AD.
 
 ### System Components
 
 #### Frontend UI
 
-**Purpose:** Provide a responsive web interface for users to manage projects, resources, and testing activities.
+**Purpose:** User interface for project management, stakeholder communication, and resource oversight
 
 **Responsibilities:**
-- Render dashboards
+- Render data
 - Handle user interactions
 - Communicate with backend APIs
 
-**Technologies:** React.js, TypeScript, Bootstrap
+**Technologies:** React.js, TypeScript
 
-#### API Gateway / Backend Services
+#### API Gateway / Load Balancer
 
-**Purpose:** Expose RESTful APIs for frontend and external integrations, handle business logic.
+**Purpose:** Distribute incoming requests to backend services
+
+**Responsibilities:**
+- Routing
+- SSL termination
+- Rate limiting
+
+**Technologies:** Azure Application Gateway
+
+#### Backend Microservices
+
+**Purpose:** Handle core business logic for project, stakeholder, opportunity, and resource management
 
 **Responsibilities:**
 - Process requests
-- Manage authentication & authorization
-- Orchestrate microservices
+- Manage data transactions
+- Enforce security policies
 
-**Technologies:** FastAPI (Python), Docker, Kubernetes
+**Technologies:** FastAPI (Python), Docker containers
 
-#### Project Management Service
+#### Database Layer
 
-**Purpose:** Manage project milestones, scope, timelines.
-
-**Responsibilities:**
-- CRUD operations for projects, milestones
-
-**Technologies:** FastAPI, PostgreSQL
-
-#### Resource & Team Management Service
-
-**Purpose:** Manage team members, roles, resource allocation.
+**Purpose:** Persist system data
 
 **Responsibilities:**
-- Assign roles
-- Track availability
+- Store project info, stakeholder data, milestones, etc.
 
-**Technologies:** FastAPI, PostgreSQL
-
-#### Testing Management Service
-
-**Purpose:** Define, track, and report testing activities.
-
-**Responsibilities:**
-- Create test cases
-- Track progress
-- Log results
-
-**Technologies:** FastAPI, PostgreSQL
-
-#### Authentication & Authorization
-
-**Purpose:** Secure access via OAuth2/OIDC, RBAC for permissions.
-
-**Responsibilities:**
-- User identity management
-- Access control
-
-**Technologies:** Azure AD B2C, OAuth2, JWT
-
-#### Data Storage
-
-**Purpose:** Persist project, resource, testing data.
-
-**Responsibilities:**
-- Data integrity
-- Query support
-
-**Technologies:** Azure SQL Database
+**Technologies:** PostgreSQL
 
 #### Caching Layer
 
-**Purpose:** Improve performance for frequently accessed data.
+**Purpose:** Improve performance for frequently accessed data
 
 **Responsibilities:**
-- Cache project states
-- Reduce database load
+- Cache project status, user sessions
 
-**Technologies:** Azure Cache for Redis
+**Technologies:** Redis
+
+#### External Integrations
+
+**Purpose:** Connect with Azure hosting, AWS billing, and other services
+
+**Responsibilities:**
+- Manage hosting environment
+- Handle billing and funding
+
+**Technologies:** Azure SDKs, AWS SDKs
 
 ### Data Flow
 
 #### User Interaction
 
-Users interact via React UI, which sends requests to backend APIs for project, resource, and testing management. Responses update the UI in real-time via WebSocket where needed.
+Users interact via frontend, which sends REST/WebSocket requests to backend services.
 
-1. User logs in via OAuth2
-2. User creates/updates milestones, resources, or tests via UI
-3. Frontend calls REST APIs; backend processes and stores data
-4. Real-time updates sent via WebSocket to UI
+1. User performs action on UI
+2. Frontend calls REST API or WebSocket endpoint
+3. Backend processes request, interacts with database/cache
+4. Response sent back to frontend
+5. Real-time updates via WebSocket if applicable
 
 #### Data Persistence
 
-Backend services persist data into Azure SQL; cache frequently accessed data in Redis.
+Backend services persist and retrieve data from PostgreSQL and Redis.
 
-1. Create/update data via API
-2. Write to Azure SQL
-3. Update cache as needed
+1. Backend receives data update request
+2. Validates and processes data
+3. Stores data in PostgreSQL
+4. Updates cache if needed
 
 ## Technology Stack
 
@@ -158,22 +137,21 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 **Framework:** React.js
 
-*Justification:* React provides a flexible, component-based architecture suitable for a responsive, maintainable web UI. It has a large ecosystem and supports real-time updates.
+*Justification:* React provides a flexible, component-based architecture suitable for dynamic dashboards and responsive UI, with a large ecosystem and community support.
 
 **Libraries:**
 
 | Library | Purpose |
 |---------|---------|
 | Redux | State management |
-| Axios | HTTP requests |
-| Bootstrap | UI styling |
+| Material-UI | UI component library |
 
 ### Backend
 
 **Framework:** FastAPI
 **Language:** Python
 
-*Justification:* FastAPI is lightweight, fast, supports async operations, and integrates well with Python data processing libraries, ideal for microservices.
+*Justification:* FastAPI offers high performance, asynchronous capabilities, and easy integration with Python data tools, suitable for scalable microservices.
 
 **Libraries:**
 
@@ -181,25 +159,24 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 |---------|---------|
 | SQLAlchemy | ORM for PostgreSQL |
 | Pydantic | Data validation |
-| Authlib | OAuth2 implementation |
 
 ### Database
 
-**Primary Database:** Azure SQL Database
-*Justification:* Relational data with complex relationships, strong consistency, and industry standard compliance.
+**Primary Database:** PostgreSQL
+*Justification:* Relational data with complex relationships, proven scalability, and strong support for security and compliance.
 
-**Caching:** Azure Cache for Redis
-*Justification:* High-performance caching layer to reduce database load and improve responsiveness.
+**Caching:** Redis
+*Justification:* Fast in-memory data store to reduce database load and improve response times.
 
-**Search:** None currently; can consider Elasticsearch in future if search becomes complex.
-*Justification:* N/A
+**Search:** Elasticsearch
+*Justification:* Future consideration for advanced search capabilities across project data.
 
 ### Infrastructure
 
 **Cloud Provider:** Azure
 **Hosting:** Azure App Service for frontend, Azure Kubernetes Service (AKS) for backend microservices
 **CDN:** Azure CDN
-**Storage:** Azure Blob Storage for static assets and logs
+**Storage:** Azure Blob Storage for static assets
 
 ### DevOps
 
@@ -215,47 +192,47 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 | Service | Purpose | API Type |
 |---------|---------|----------|
-| Azure AD B2C | User authentication and identity management | OAuth2/OIDC |
+| Azure AD | Authentication and RBAC | OAuth2 / OpenID Connect |
+| AWS Credits | Billing and funding management | - |
 
 ## Security Architecture
 
 ### Authentication
 
-**Method:** OAuth2/OIDC
-**Provider:** Azure AD B2C
+**Method:** OAuth2 / OpenID Connect
+**Provider:** Azure AD
 
 ### Authorization
 
 **Model:** RBAC
-**Implementation:** Role-based access control enforced at API level and UI
+**Implementation:** Azure AD role assignments integrated with application access controls
 
 ### Data Protection
-- Encryption at rest via Azure SQL and Blob Storage
-- Encryption in transit via HTTPS/TLS
-- Data masking where sensitive data exists
+- Encryption at rest: Azure Storage encryption, PostgreSQL encryption
+- Encryption in transit: TLS 1.2+ for all communications
+- Data masking: Sensitive data masked in logs and UI
 
-**Compliance:** Industry standards for aerospace & defense, ISO 27001
+**Compliance:** GDPR, SOC2
 
 ### Security Measures
 - Regular security audits
-- Secure coding practices
-- Least privilege access
+- Least privilege access policies
 
 ## Scalability & Reliability
 
-**Scaling Strategy:** Auto-scaling on Azure App Service and AKS based on load
+**Scaling Strategy:** Auto-scaling for AKS and App Service based on load
 **Load Balancing:** Azure Load Balancer / Application Gateway
 
 ### High Availability
 
-**Approach:** Multi-AZ deployment for Azure SQL, AKS across multiple nodes
-**Failover:** Azure's built-in failover mechanisms
+**Approach:** Multi-AZ deployment for databases and services
+**Failover:** Automated failover with Azure services
 
 ### Disaster Recovery
 
 **RPO:** 24 hours
 **RTO:** 4 hours
-**Backup Strategy:** Automated backups with geo-redundancy
+**Backup Strategy:** Daily backups with geo-redundancy
 
 ## Integration Architecture
 
@@ -263,31 +240,32 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 **Style:** REST
 **Versioning:** URL-based
-**Documentation:** OpenAPI/Swagger
+**Documentation:** Swagger/OpenAPI
 
 ### External Integrations
 
 | System | Type | Data Exchanged |
 |--------|------|----------------|
-| Azure AD B2C | OAuth2/OIDC | User identity tokens, access tokens |
+| Azure Hosting | Cloud platform | Deployment, scaling, monitoring |
+| AWS Billing | API | Funding, billing status |
 
 ### Event Architecture
 
 **Pattern:** Request-response with WebSocket for real-time updates
-**Message Broker:** None currently; future Kafka or Azure Event Grid can be considered
+**Message Broker:** WebSocket
 
 ## Development Approach
 
 **Methodology:** Agile Scrum
 **Sprint Duration:** 2 weeks
-**Branching Strategy:** GitFlow
+**Branching Strategy:** Trunk-based development
 
 **Environments:** development, staging, production
 
 ### Testing Strategy
 
-**Unit Testing:** Pytest for backend, Jest for frontend
-**Integration Testing:** API contract tests
+**Unit Testing:** Pytest
+**Integration Testing:** Test suites for microservices
 **E2E Testing:** Playwright
 **Coverage Target:** 80%
 
@@ -297,85 +275,63 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 ### Development Phases
 
-#### Phase 1: Foundation & Setup
-
-**Duration:** 4 weeks
-
-**Features:**
-- Environment setup
-- Initial backend and frontend scaffolding
-- Authentication setup
-
-**Deliverables:**
-- Dev environment, CI/CD pipelines, initial project structure
-
-#### Phase 2: Core Module Development
+#### Phase 1: Setup & Core Modules
 
 **Duration:** 6 weeks
 
 **Features:**
-- Project management dashboard
-- Resource management
-- Testing activity management
+- Project Management Dashboard
+- Stakeholder Portal
 
 **Deliverables:**
-- Functional core modules
-- Basic UI
-- API endpoints
+- Basic UI, backend APIs, database schema
 
-#### Phase 3: Integration & Testing
+#### Phase 2: Funding & Resource Modules
 
-**Duration:** 3 weeks
+**Duration:** 4 weeks
 
 **Features:**
-- Integration testing
-- User acceptance testing
-- Security hardening
+- Opportunity & Funding Tracking
 
 **Deliverables:**
-- Test reports
-- Security review documentation
+- Funding APIs, resource management UI
 
-#### Phase 4: Deployment & Finalization
+#### Testing & Deployment
 
-**Duration:** 3 weeks
+**Duration:** 4 weeks
 
 **Features:**
-- Deployment to production
-- Client training
-- Final validation
+- Testing, bug fixing, deployment
 
 **Deliverables:**
-- Deployed system
-- User documentation
+- Test reports, deployed system
 
 ### Milestones
 
 | Milestone | Week | Criteria |
 |-----------|------|----------|
-| MVP Release | 10 | Core modules functional, Basic testing completed |
-| System Go-Live | 16 | Deployment successful, Client sign-off |
+| MVP Release | 10 | Core modules functional, Initial testing completed |
+| Full System Deployment | 16 | All modules deployed, User acceptance testing completed |
 
 ### Timeline Risks
 
-- **Delays in requirement clarification** (+2 weeks)
-  - Mitigation: Early stakeholder engagement and iterative feedback
+- **Delays in requirements clarification** (+2 weeks)
+  - Mitigation: Early engagement and clarifications
 
 ## Pricing Estimate
 
 **Currency:** USD
-**Pricing Model:** Time and Materials
+**Pricing Model:** time_and_materials
 
 ### Development Costs
 
-**Total:** $180,000.00
+**Total:** $120,000.00
 
 | Phase | Cost | Details |
 |-------|------|---------|
-| Phase 1 | $40,000.00 | Environment setup, initial scaffolding |
-| Phase 2 | $80,000.00 | Core modules development |
-| Phase 3 | $30,000.00 | Integration, testing, security hardening |
-| Phase 4 | $20,000.00 | Deployment, training, final validation |
+| Phase 1 | $60,000.00 | Core modules, UI, backend APIs, database setup |
+| Phase 2 | $40,000.00 | Funding, opportunity, resource modules |
+| Testing & Deployment | $20,000.00 | Testing, bug fixing, deployment |
 
 ### Infrastructure Costs
 
@@ -384,17 +340,16 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 | Service | Monthly Cost |
 |---------|--------------|
-| Azure App Service | $200.00 |
-| Azure SQL Database | $150.00 |
-| Azure AKS | $150.00 |
-| Azure Blob Storage | $50.00 |
-| Azure CDN | $50.00 |
+| Azure App Service & AKS | $400.00 |
+| Azure Storage | $100.00 |
+| Azure CDN & Monitoring | $100.00 |
 
 ### Third-Party Costs (Monthly)
 
 | Service | Tier | Monthly Cost |
 |---------|------|--------------|
-| Azure AD B2C | Standard | $50.00 |
+| Azure AD | Standard | $50.00 |
+| AWS Credits | - | $0.00 |
 
 ### Payment Terms
 
@@ -402,16 +357,15 @@ Backend services persist data into Azure SQL; cache frequently accessed data in 
 
 | Milestone | Percentage |
 |-----------|------------|
-| Project Initiation & Planning | 20% |
-| Core Modules Complete | 40% |
-| Testing & Validation | 20% |
-| Deployment & Final Sign-off | 20% |
+| Project Kickoff | 20% |
+| Phase 1 Complete | 30% |
+| Phase 2 Complete | 30% |
+| Final Deployment | 20% |
 
 ### Exclusions
 
-- Hardware procurement
-- Third-party licensing beyond initial setup
-- Post-deployment maintenance and support
+- Third-party licenses outside scope
+- Hardware costs
 
 ---
 
