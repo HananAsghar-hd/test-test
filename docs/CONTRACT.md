@@ -13,9 +13,9 @@ This Software Development Agreement ("Agreement") is entered into by and between
 
 **SERVICE PROVIDER:**
 
-**To be specified**
-Address: To be specified
-Represented by: To be specified
+**To be defined**
+Address: To be provided
+Represented by: To be designated
 
 (hereinafter referred to as "Provider")
 
@@ -24,7 +24,7 @@ Represented by: To be specified
 **CLIENT:**
 
 **Test**
-Address: https://www.test.com
+Address: Not specified
 Represented by: Hamza Farooq
 
 (hereinafter referred to as "Client")
@@ -35,12 +35,14 @@ Represented by: Hamza Farooq
 
 **WHEREAS:**
 
-This Agreement is entered into for the development of a cloud-based testing management platform for the client in the Aerospace & Defense industry, based on the project scope, specifications, and timelines outlined herein.
+This Agreement is entered into for the development and delivery of software modules supporting the 'Test - Test' project, which involves testing activities, stakeholder management, and opportunity tracking, as detailed in the Statement of Work (SOW).
 
 **OBJECTIVES:**
-- Develop a scalable, secure, and modular testing platform
-- Establish clear milestones for project delivery
-- Ensure client requirements are met with quality and efficiency
+- Define project scope and deliverables
+- Establish project milestones and timelines
+- Set forth payment terms and conditions
+- Protect the rights and obligations of both parties
+- Implement change management and dispute resolution procedures
 
 **NOW, THEREFORE**, in consideration of the mutual covenants and agreements set forth herein, the parties agree as follows:
 
@@ -48,11 +50,11 @@ This Agreement is entered into for the development of a cloud-based testing mana
 
 ## 1. DEFINITIONS
 
-**1.1 "Deliverables"** means The tangible and intangible outputs to be provided by the Provider as specified in the Statement of Work (SOW).
+**1.1 "Deliverables"** means The tangible and intangible outputs to be provided by the Provider as specified in the SOW.
 
-**1.2 "Acceptance Criteria"** means The conditions under which the client will accept the deliverables, including review and approval processes.
+**1.2 "Acceptance Criteria"** means The conditions under which the Client will accept the deliverables, including functional and performance requirements.
 
-**1.3 "Change Request"** means A formal proposal to modify the scope, schedule, or costs of the project, which must be assessed and approved prior to implementation.
+**1.3 "Change Request"** means A formal proposal for modifications to the scope, schedule, or costs of the project, which must be approved by both parties.
 
 ---
 
@@ -60,40 +62,39 @@ This Agreement is entered into for the development of a cloud-based testing mana
 
 ### 2.1 Description
 
-Development of a cloud-hosted testing management platform comprising project planning, core modules, stakeholder portals, and validation, aligned with the detailed SOW and architecture documents.
+Development and delivery of core project management, stakeholder communication, and opportunity tracking modules supporting MVP and subsequent phases, as detailed in the SOW.
 
 ### 2.2 Deliverables
 
 | ID | Deliverable | Description | Phase |
 |----|-------------|-------------|-------|
-| D-001 | Project Management & Planning Setup | Initial project plan, milestones, scope documentation, and resource allocation plan. | mvp |
-| D-002 | Core System Modules | Developed project dashboard, resource management, and testing activity modules. | mvp |
-| D-003 | Stakeholder Feedback Portal | Web portal for client feedback, approvals, and reporting. | phase2 |
-| D-004 | Final Testing & Validation Report | Comprehensive testing results, system validation, and sign-off documentation. | final |
+| D-001 | Project Management Dashboard | A web-based dashboard displaying project status, milestones, and progress indicators. | mvp |
+| D-002 | Stakeholder Communication Portal | A portal for stakeholders to view updates, provide feedback, and approve deliverables. | mvp |
+| D-003 | Opportunity & Funding Management Module | Module to track opportunity details, funding, and project stage. | phase2 |
 
 ### 2.3 In Scope
 
-- Project planning and management setup
-- Development of core modules
-- Stakeholder communication setup
-- Testing and validation of system functionalities
+- Project management setup
+- Stakeholder communication framework
+- Opportunity and funding tracking setup
 
 ### 2.4 Out of Scope
 
-- Hardware procurement
-- Development of industry-specific compliance features beyond aerospace standards
+- External system integrations
+- Development beyond initial setup
 
 ### 2.5 Assumptions
 
-- Client will provide timely feedback and requirements clarification
-- Azure and AWS platforms will be available and stable
-- Funding via AWS Credits will be sufficient for scope
+- Client will provide detailed requirements in future phases
+- Project scope is primarily testing activities based on project name and description
+- Project timeline is placeholder (dates in 9999), assuming actual dates will be provided later
+- Client goals and detailed requirements are not provided, assuming they will be clarified later
 
 ---
 
 ## 3. TIMELINE
 
-**3.1 Commencement Date:** To be determined upon signing
+**3.1 Commencement Date:** To be determined upon contract signing
 
 **3.2 Estimated Duration:** 16 weeks
 
@@ -101,20 +102,19 @@ Development of a cloud-hosted testing management platform comprising project pla
 
 | ID | Milestone | Target | Deliverables |
 |----|-----------|--------|--------------|
-| M-001 | Project Initiation & Planning | Week 1 | D-001 |
-| M-002 | Core Modules Development Complete | Week 10 | D-002 |
-| M-003 | Stakeholder Feedback Portal Launch | Week 12 | D-003 |
-| M-004 | System Validation & Sign-off | Week 16 | D-004 |
+| M-001 | Initial Setup Complete | Week 6 | D-001, D-002 |
+| M-002 | Phase 2 Module Delivery | Week 10 | D-003 |
+| M-003 | Full System Deployment | Week 16 | All modules |
 
 ### 3.4 Delays
 
-Delays caused by unforeseen circumstances or client delays shall be communicated promptly. The parties agree to adjust schedules reasonably to accommodate such delays, with written amendments to this agreement.
+Delays caused by unforeseen circumstances or scope changes will be communicated promptly. The parties agree to negotiate in good faith to adjust schedules accordingly.
 
 ---
 
 ## 4. PAYMENT TERMS
 
-**4.1 Total Contract Value:** USD 180,000.00
+**4.1 Total Contract Value:** USD 2,333.00
 
 **4.2 Payment Structure:** Milestone-based
 
@@ -122,126 +122,126 @@ Delays caused by unforeseen circumstances or client delays shall be communicated
 
 | Milestone | Percentage | Amount | Trigger |
 |-----------|------------|--------|---------|
-| Project Initiation & Planning | 20% | USD 36,000.00 | Upon signing of this agreement |
-| Core Modules Complete | 40% | USD 72,000.00 | Acceptance of core modules |
-| Testing & Validation | 20% | USD 36,000.00 | Client approval of testing outcomes |
-| Deployment & Final Sign-off | 20% | USD 36,000.00 | Final deployment and client sign-off |
+| Contract Signing | 20% | USD 466.60 | Upon contract execution |
+| Initial Setup Complete (M-001) | 30% | USD 699.90 | Upon milestone acceptance |
+| Phase 2 Module Delivery (M-002) | 30% | USD 699.90 | Upon milestone acceptance |
+| Full Deployment (M-003) | 20% | USD 466.60 | Upon final acceptance |
 
 **4.4 Payment Terms:** Net 30 days from invoice date
 
-**4.5 Late Payment:** Interest at 1.5% per month on overdue amounts
+**4.5 Late Payment:** Late payments shall accrue interest at 1.5% per month or the maximum permitted by law, whichever is lower.
 
 ---
 
 ## 5. ACCEPTANCE PROCEDURE
 
-**5.1 Submission:** Deliverables will be submitted via designated project management portal or email.
+**5.1 Submission:** Deliverables shall be submitted electronically via agreed platform.
 
-**5.2 Review Period:** 10 business days
+**5.2 Review Period:** 10 business days from receipt of deliverables.
 
-**5.3 Acceptance Criteria:** Deliverables meet specifications and acceptance criteria, and are approved in writing by the client.
+**5.3 Acceptance Criteria:** Deliverables meet the specified acceptance criteria and are free of critical defects.
 
-**5.4 Rejection Procedure:** Rejections must be documented with reasons, and the Provider shall rectify issues within agreed timelines.
+**5.4 Rejection Procedure:** Rejections must be communicated in writing with detailed reasons within the review period. Provider shall promptly address issues.
 
-**5.5 Deemed Acceptance:** If no response is received within review period, deliverables shall be deemed accepted.
+**5.5 Deemed Acceptance:** If no written rejection is received within the review period, deliverables shall be deemed accepted.
 
 ---
 
 ## 6. CHANGE MANAGEMENT
 
-**6.1 Change Request Process:** All change requests must be submitted in writing, assessed for impact on scope, schedule, and costs, and approved in writing before implementation.
+**6.1 Change Request Process:** All change requests must be documented and submitted in writing. Changes are subject to mutual approval.
 
-**6.2 Impact Assessment:** Each change will be evaluated for scope, schedule, and cost implications, with adjustments documented and approved.
+**6.2 Impact Assessment:** Provider shall assess impact on scope, schedule, and costs before implementing changes.
 
-**6.3 Approval Process:** Changes require written approval from authorized representatives of both parties.
+**6.3 Approval Process:** Changes are approved when both parties sign a Change Order.
 
-**6.4 Pricing for Changes:** Additional work outside the scope will be billed at agreed rates or as per change order.
+**6.4 Pricing for Changes:** Additional work outside the scope shall be billed at agreed rates or as per change order.
 
 ---
 
 ## 7. INTELLECTUAL PROPERTY
 
-**7.1 Ownership:** All intellectual property rights in the work product shall be owned by the Provider until full payment, upon which rights shall transfer to the Client, subject to license grants.
+**7.1 Ownership:** Provider shall retain ownership of pre-existing IP. Client shall own all rights to work product upon full payment.
 
-**7.2 Work Product:** All deliverables and work products created under this agreement shall be owned by the Client upon full payment.
+**7.2 Work Product:** All deliverables shall be considered work made for hire, with rights transferred to the Client upon acceptance and payment.
 
-**7.3 Pre-existing IP:** Pre-existing IP of either party shall remain the property of that party and shall be licensed for use as necessary.
+**7.3 Pre-existing IP:** Provider's pre-existing IP remains its sole property, licensed to Client as necessary.
 
-**7.4 Third-Party IP:** Any third-party components shall be used under appropriate licenses, and Provider shall ensure compliance.
+**7.4 Third-Party IP:** Any third-party IP used shall be licensed appropriately, with costs borne by the Provider or Client as agreed.
 
-**7.5 License Grants:** Provider grants Client a perpetual, non-exclusive license to use the deliverables for their intended purpose.
+**7.5 License Grants:** Provider grants Client a perpetual, non-exclusive license to use the deliverables.
 
 ---
 
 ## 8. CONFIDENTIALITY
 
-**8.1 Definition:** All non-public, proprietary, or confidential information exchanged shall be considered Confidential Information.
+**8.1 Definition:** Confidential Information includes all non-public, proprietary information exchanged between the parties.
 
-**8.2 Obligations:** Both parties shall keep Confidential Information confidential and shall not disclose to third parties without prior consent.
+**8.2 Obligations:** Parties shall keep Confidential Information confidential and not disclose to third parties without prior consent.
 
-**8.3 Exceptions:** ['Information already known publicly', 'Information independently developed', 'Information disclosed by third parties legally']
+**8.3 Exceptions:** ['Information already known publicly', 'Information independently developed', 'Information disclosed with prior written consent']
 
-**8.4 Duration:** Confidentiality obligations shall survive for five (5) years after termination of this agreement.
+**8.4 Duration:** Confidentiality obligations shall survive for 3 years after termination.
 
 ---
 
 ## 9. WARRANTIES
 
 **9.1 Provider Warranties:**
-- The Provider has the necessary expertise and resources to perform the services.
-- Deliverables will conform to the specifications and accepted standards.
+- Deliverables will conform to the specifications and acceptance criteria.
+- Provider has the necessary rights and licenses to deliver the work.
 
-**9.2 Warranty Period:** 12 months from acceptance of final deliverables.
+**9.2 Warranty Period:** 90 days from acceptance.
 
-**9.3 Warranty Remedies:** Provider shall, at its expense, correct any defects or non-conformities during the warranty period.
+**9.3 Warranty Remedies:** Provider shall repair or replace non-conforming deliverables within a reasonable time frame.
 
-**9.4 Disclaimer:** Except as expressly provided, the Provider makes no other warranties, express or implied.
+**9.4 Disclaimer:** Except as expressly provided, no other warranties, express or implied, are made.
 
 ---
 
 ## 10. SUPPORT AND MAINTENANCE
 
-**10.1 Warranty Support:** Support and defect correction during the warranty period.
+**10.1 Warranty Support:** Support for warranty period as specified.
 
-**10.2 Post-Warranty Support:** Support services may be provided under separate agreement.
+**10.2 Post-Warranty Support:** Support options available at additional cost.
 
-**10.3 Service Levels:** Service levels and response times shall be defined in a separate support agreement.
+**10.3 Service Levels:** Service levels and response times to be defined in separate SLA if applicable.
 
-**10.4 Maintenance Options:** Additional maintenance packages available upon request.
+**10.4 Maintenance Options:** Available upon request, billed separately.
 
 ---
 
 ## 11. LIMITATION OF LIABILITY
 
-**11.1 Liability Cap:** Liability shall be limited to the total contract value of $180,000.
+**11.1 Liability Cap:** Total liability shall not exceed the total contract value.
 
-**11.2 Exclusions:** ['Indirect, consequential, or punitive damages']
+**11.2 Exclusions:** ['Indirect, consequential, or punitive damages', 'Loss of profits or business interruption']
 
-**11.3 Consequential Damages:** Parties shall not be liable for consequential damages arising from this agreement.
+**11.3 Consequential Damages:** Parties shall not be liable for consequential damages.
 
 ---
 
 ## 12. TERMINATION
 
-**12.1 Termination for Convenience:** Either party may terminate this agreement with 30 days written notice.
+**12.1 Termination for Convenience:** Either party may terminate with 30 days' written notice.
 
-**12.2 Termination for Cause:** Either party may terminate immediately for material breach if not cured within 10 days.
+**12.2 Termination for Cause:** Immediate termination if the other party breaches material terms and fails to cure within 15 days.
 
-**12.3 Effects of Termination:** Upon termination, Provider shall deliver all work in progress, and Client shall pay for all work performed up to termination.
+**12.3 Effects of Termination:** Upon termination, Provider shall deliver all work-in-progress and Client shall pay for all work performed up to termination.
 
-**12.4 Survival:** ['Confidentiality', 'Intellectual Property Rights', 'Warranties and Limitation of Liability']
+**12.4 Survival:** ['Confidentiality', 'Intellectual Property rights', 'Warranties and liabilities']
 
 ---
 
 ## 13. DISPUTE RESOLUTION
 
-**13.1 Governing Law:** This agreement shall be governed by the laws of [Jurisdiction].
+**13.1 Governing Law:** This Agreement shall be governed by the laws of [Jurisdiction].
 
-**13.2 Negotiation:** Parties shall attempt to resolve disputes through good faith negotiations for 30 days.
+**13.2 Negotiation:** Parties shall attempt to resolve disputes amicably within 30 days.
 
-**13.3 Mediation:** If unresolved, disputes shall be submitted to mediation in [Location].
+**13.3 Mediation:** If unresolved, disputes shall be submitted to mediation.
 
-**13.4 Arbitration/Litigation:** If mediation fails, disputes shall be finally resolved by binding arbitration or litigation in [Jurisdiction].
+**13.4 Arbitration/Litigation:** If mediation fails, disputes shall be finally resolved by arbitration or litigation in the specified jurisdiction.
 
 ---
 
@@ -249,7 +249,7 @@ Delays caused by unforeseen circumstances or client delays shall be communicated
 
 **14.1 Entire Agreement**
 
-This agreement, including all schedules and attachments, constitutes the entire understanding between the parties.
+This Agreement, including all schedules and attachments, constitutes the entire understanding between the parties.
 
 **14.2 Amendment**
 
@@ -257,7 +257,7 @@ Any amendments must be in writing and signed by authorized representatives.
 
 **14.3 Assignment**
 
-Neither party shall assign this agreement without prior written consent of the other.
+Neither party shall assign this Agreement without prior written consent.
 
 **14.4 Force Majeure**
 
@@ -265,7 +265,7 @@ Neither party shall be liable for delays or failure caused by events beyond thei
 
 **14.5 Notices**
 
-All notices shall be in writing and delivered via email or registered mail to the addresses specified.
+Notices shall be delivered in writing to the addresses specified herein.
 
 ---
 
@@ -273,15 +273,15 @@ All notices shall be in writing and delivered via email or registered mail to th
 
 **Schedule A: Detailed Scope of Work**
 
-_See Scope of Work section above_
+_See SOW document above_
 
 **Schedule B: Technical Specifications**
 
-_Refer to the Architecture & Technical Summary section_
+_To be provided in separate technical document_
 
 **Schedule C: Payment Schedule**
 
-_See Payment Terms section above_
+_Included in Payment Terms section_
 
 ---
 
