@@ -8,7 +8,7 @@
 
 ## Welcome
 
-Welcome to the Test - Test project. This platform includes a FastAPI backend, React frontend, and Azure cloud infrastructure, aimed at project management and testing activities.
+Test - Test is a comprehensive project management platform leveraging Azure cloud services, with a modern tech stack including FastAPI, React.js, and Kubernetes for scalable deployment.
 
 ### Key Contacts
 
@@ -25,16 +25,14 @@ Welcome to the Test - Test project. This platform includes a FastAPI backend, Re
 |------|---------|--------------|
 | Node.js | 18+ | `Download from nodejs.org or use package managers` |
 | Docker | Latest | `Download from docker.com` |
-| Git | Latest | `Download from git-scm.com` |
+| Git | Latest | `brew install git or equivalent` |
 
 ### Environment Setup
 
 1. Clone the repository: git clone <repo-url>
-2. Copy .env.example to .env and configure environment variables
-3. Install backend dependencies: cd src/backend && pip install -r requirements.txt
-4. Install frontend dependencies: cd src/frontend && npm install
-5. Run backend: uvicorn main:app --reload
-6. Run frontend: npm run start
+2. Create environment variables: cp .env.example .env and update as needed
+3. Install dependencies: npm install (frontend), pip install -r requirements.txt (backend)
+4. Start local development servers: npm run dev (frontend), uvicorn main:app --reload (backend)
 
 ### Quick Start Commands
 
@@ -43,19 +41,19 @@ Welcome to the Test - Test project. This platform includes a FastAPI backend, Re
 git clone <repo-url>
 
 # install_backend
-cd src/backend && pip install -r requirements.txt
+pip install -r backend/requirements.txt
 
 # install_frontend
-cd src/frontend && npm install
+npm install --prefix frontend
 
 # start_backend
-uvicorn main:app --reload
+uvicorn backend.main:app --reload
 
 # start_frontend
-npm run start
+npm run dev --prefix frontend
 
 # run_tests
-pytest
+pytest tests/ (backend), npm test --prefix frontend
 
 ```
 
@@ -67,9 +65,9 @@ pytest
 |--------|---------|
 | `main` | Production-ready code |
 | `develop` | Integration branch for ongoing development |
-| `feature/*` | Feature branches off develop |
+| `feature/*` | Feature branches branched from develop |
 | `bugfix/*` | Bug fix branches |
-| `hotfix/*` | Hotfixes for production issues |
+| `hotfix/*` | Urgent fixes on main |
 
 ### Commit Conventions
 
@@ -79,91 +77,93 @@ pytest
 
 **Examples:**
 ```
-feat(auth): add OAuth login
-fix(api): correct response structure
+feat(api): add new endpoint
+fix(db): resolve connection issue
 docs(readme): update setup instructions
 ```
 
 ### Pull Request Process
 
 1. Create feature branch from develop
-2. Make commits following conventions
-3. Push branch and open PR against develop
-4. Request review, address comments
+2. Commit changes and push
+3. Open PR targeting develop
+4. Request review and address comments
 5. Merge after approval
 
 ### Code Review Guidelines
 
 - Review within 24 hours
 - Check code quality, standards, and tests
-- Ensure documentation is updated
+- Verify documentation updates
+- Ensure no breaking changes
 
 ## Coding Standards
 
 ### Style Guide
 
-Follow PEP8 for Python, Airbnb for JavaScript
+Follow PEP8 for Python, Airbnb style for JavaScript
 
 ### Linting
 
-Use ESLint and Flake8 with configured rules
+Use flake8, ESLint, and Prettier configured in project
 
 ### Testing Requirements
 
-- **Unit Tests:** Required for all functions and components
-- **Integration Tests:** For API and service interactions
+- **Unit Tests:** All new functions must have unit tests
+- **Integration Tests:** Cover API endpoints and critical flows
 - **Coverage Minimum:** 80%
 
 ### Documentation Requirements
 
-- JSDoc for frontend functions
-- Docstrings for Python functions
+- Use docstrings for Python functions
 - Update README for new features
-- API documentation with Swagger/OpenAPI
+- Maintain API docs with Swagger or OpenAPI
 
 ## Architecture Overview
 
-Microservices architecture with FastAPI backend, React frontend, deployed on AKS, monitored via Azure Monitor and Application Insights.
+Microservices architecture with FastAPI backend, React frontend, orchestrated via AKS, with Azure services for monitoring, logging, and storage.
 
 ### Key Components
 
 | Component | Description |
 |-----------|-------------|
+| Frontend | React.js SPA with Redux and Material-UI |
 | Backend | FastAPI microservices with SQLAlchemy ORM |
-| Frontend | React.js SPA with Redux |
-| Database | Azure SQL Database and Redis Cache |
-| Infrastructure | Azure AKS, Blob Storage, CDN |
+| Database | PostgreSQL with Redis caching and Elasticsearch for search |
+| Infrastructure | Azure Kubernetes Service, Azure App Service, Blob Storage |
 
 ### Important Patterns
 
-- API Gateway pattern for backend services
 - Containerization with Docker
 - CI/CD with Azure Pipelines
+- Kubernetes deployment manifests
+- Monitoring with Azure Monitor and Application Insights
 
 ## Troubleshooting
 
 ### Common Issues
 
-**Port conflicts**
+**Port conflicts during local startup**
 
-Solution: Stop conflicting process or change port in .env
+Solution: Stop conflicting process or change port in environment variables
 
-**Azure resource provisioning failures**
+**Database connection errors**
 
-Solution: Check Azure portal and ensure permissions and quotas
+Solution: Ensure Docker containers are running and environment variables are correct
 
 ### Getting Help
 
-- Consult the documentation
-- Ask in #dev-team Slack channel
+- Consult the documentation sections
+- Ask questions in #development Slack channel
 - Tag the Tech Lead for urgent issues
 
 ## Useful Resources
 
-- [Azure DevOps](https://dev.azure.com/yourorg)
-- [Azure Documentation](https://docs.microsoft.com/en-us/azure)
-- [React Docs](https://reactjs.org/docs/getting-started.html)
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Azure Documentation](https://docs.microsoft.com/en-us/azure/)
+- [FastAPI Docs](https://fastapi.tiangolo.com/)
+- [React.js Docs](https://reactjs.org/docs/getting-started.html)
+- [Azure DevOps Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
+- [Kubernetes](https://kubernetes.io/docs/home/)
 
 ---
 
