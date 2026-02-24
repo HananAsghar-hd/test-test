@@ -9,15 +9,15 @@
 
 **Project Name:** Test - Test
 
-**Description:** A project with minimal provided details, likely in the planning phase, involving testing activities.
+**Description:** A project with minimal available details, likely in the planning stage, involving testing activities.
 
 ### Business Objectives
 - Complete testing activities as per project scope
-- Ensure client requirements are met within estimated hours
+- Ensure project aligns with client goals and expectations
 
 ### Success Criteria
-- Successful completion of testing within the estimated hours
-- Client approval of testing outcomes
+- Successful completion of testing within estimated hours
+- Client approval and sign-off post testing
 - Adherence to project schedule and budget
 
 ## 2. Stakeholders
@@ -26,29 +26,29 @@
 **Role:** Primary Client Contact / CEO
 **Responsibilities:**
 - Provide project requirements and feedback
-- Approve deliverables
+- Approve project deliverables
 - Coordinate communication between client and project team
 
 ### hamza farooq
-**Role:** Sales Rep (Project), Delivery Lead (Opportunity)
+**Role:** Sales and Delivery Lead
 **Responsibilities:**
-- Manage sales activities
-- Coordinate project delivery
-- Liaise with client for project scope and requirements
+- Manage sales process and client relationship
+- Lead project delivery activities
+- Coordinate with technical team and client
 
 ### Usama Kaleem
-**Role:** Tech Lead (Project), Sales Rep (Opportunity)
+**Role:** Tech Lead / Sales Representative
 **Responsibilities:**
-- Lead technical aspects of the project
-- Support sales and opportunity management
-- Ensure technical feasibility and requirements are met
+- Oversee technical aspects of the project
+- Support sales and client engagement
+- Lead technical delivery
 
 ### Unnamed Delivery Lead
-**Role:** Delivery Lead (Project)
+**Role:** Delivery Lead
 **Responsibilities:**
-- Oversee project execution
-- Coordinate internal teams
-- Ensure project milestones are achieved
+- Manage project execution
+- Coordinate technical team
+- Ensure project milestones are met
 
 ## 3. Functional Requirements
 
@@ -56,74 +56,69 @@
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-PROJ-001 | Ability to track project status, health, and progress | mvp | CRM and project overview |
-| FR-PROJ-002 | Manage project milestones and deadlines | mvp | Project details |
+| FR-PROJ-001 | Establish project schedule with start and end dates, milestones, and deliverables. | mvp | Project details |
+| FR-PROJ-002 | Track project hours against estimated hours (66 hours). | mvp | Estimated hours provided |
 
-### Client & Stakeholder Management
+### Client Communication & Feedback
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-CLNT-001 | Maintain contact details and communication logs for client | mvp | Client info |
-| FR-CLNT-002 | Capture client goals, feedback, and approval status | phase2 | Client goals and project description |
+| FR-COM-001 | Provide a mechanism for client feedback and approval at key project stages. | mvp | Client involvement implied |
 
 ### Opportunity & Sales Management
 
 | ID | Description | Priority | Source |
 |---|---|---|---|
-| FR-OPP-001 | Track opportunity details including amount, stage, description, and dates | mvp | Opportunity info |
-| FR-OPP-002 | Manage project funding and billing details | mvp | Opportunity info |
-
-### Resource & Team Management
-
-| ID | Description | Priority | Source |
-|---|---|---|---|
-| FR-RES-001 | Maintain team member roles, responsibilities, and contact info | mvp | Team info |
+| FR-OPP-001 | Manage opportunity details including amount, stage, and description. | mvp | Opportunity details |
 
 ## 4. Non-Functional Requirements
 
-### Performance
-- System should support multiple concurrent users for project management
-
 ### Security
-- Ensure secure access to project data and client information
+- Ensure secure handling of client data and project information.
 
-### Data Management
-- Data should be stored securely with regular backups
+### Performance
+- System should support multiple users with responsive interface.
+
+### Availability
+- System should be available during agreed working hours.
 
 ## 5. Constraints
 
-- **Timeline:** Project start and end dates are set to 9999-09-09, which appears placeholder or incorrect.
-- **Budget:** Budget is tied to opportunity amount of $2,333.00
-- **Technical:** Hosting platform is Azure; billing via a specific billing ID, funding via AWS Credits.
-- **Resource:** Limited team members listed; capacity and availability are not specified.
+- **Timeline:** Project start and end dates are set to 9999-09-09, which is likely placeholder and needs clarification.
+- **Budget:** Opportunity amount is $2,333.00; project budget constraints are not explicitly defined.
+- **Technical:** Hosting platform is Azure; technical environment and infrastructure details are limited.
+- **Funding:** Funding is via AWS Credits, which may impose restrictions on resource usage.
 
 ## 6. Assumptions
 
-- Project scope is primarily testing activities based on project name and description
-- Project timeline is placeholder (dates in 9999), assuming actual dates will be provided later
-- Client goals and detailed requirements are not provided, assuming they will be clarified later
+- Project is in the planning stage with minimal details provided.
+- Project start and end dates are placeholders (9999-09-09).
+- Client goals and roadmap are not specified.
 
 ## 7. Dependencies
 
-- Hosting platform Azure, billing system, and funding via AWS Credits
-- Client provided minimal project details; further requirements depend on client input
+- Azure hosting platform for deployment and testing.
+- Funding via AWS Credits.
 
 ## 8. Identified Risks
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Unclear project scope and requirements due to minimal documentation | high | Schedule a detailed requirements gathering session with client |
-| Placeholder dates may cause scheduling issues | medium | Obtain confirmed project start and end dates |
+| Lack of detailed requirements and project scope. | high | Schedule detailed requirements gathering sessions with client. |
+| Unclear project timeline and milestones. | medium | Confirm and agree on realistic project schedule. |
+| Potential scope creep due to minimal initial documentation. | medium | Establish clear scope and change management process. |
 
 ## 9. Open Questions
 
 *The following questions need to be answered to proceed:*
 
 - **[Q1]** (scope) What are the specific testing activities and objectives for this project?
-- **[Q2]** (timeline) What are the actual project start and end dates?
-- **[Q3]** (scope) What are the detailed client goals and acceptance criteria?
-- **[Q4]** (technical) Are there any specific security or compliance requirements for handling client data?
-- **[Q5]** (scope) What are the detailed functional requirements for the testing activities?
+- **[Q2]** (scope) What are the detailed client goals and success criteria for this project?
+- **[Q3]** (timeline) What are the actual start and end dates for the project? Are the placeholder dates intentional?
+- **[Q4]** (technical) What are the detailed technical requirements and environment specifications?
+- **[Q5]** (security) Are there any specific compliance or security standards that need to be adhered to?
+- **[Q6]** (scope) What is the scope of testing (unit, integration, system, acceptance)?
+- **[Q7]** (scope) What are the detailed deliverables and acceptance criteria?
 
 ---
 
