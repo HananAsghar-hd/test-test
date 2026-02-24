@@ -8,7 +8,7 @@
 
 ## Project Overview
 
-**Technology Summary:** Full-stack web application leveraging Python (FastAPI), React.js, and Azure cloud services including AKS, App Service, and DevOps pipelines. Uses PostgreSQL, Redis, Elasticsearch, Docker, and Kubernetes.
+**Technology Summary:** Full-stack web application with Python FastAPI backend, React frontend, PostgreSQL, Redis, and Azure cloud services. CI/CD managed via Azure DevOps, orchestrated on AKS.
 
 **Complexity Level:** high
 
@@ -20,41 +20,37 @@
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| React.js | intermediate to advanced | critical | Building responsive, state-managed UI with Material-UI |
-| Redux | intermediate | important | State management for React components |
+| React.js | intermediate to advanced | critical | Component-based UI, Redux state management |
+| JavaScript/TypeScript | intermediate | important | For React development |
 
 ### Backend
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Python (FastAPI) | intermediate to advanced | critical | API development, asynchronous programming |
-| SQLAlchemy | intermediate | important | ORM for PostgreSQL |
-| Pydantic | intermediate | important | Data validation and serialization |
+| Python (FastAPI) | intermediate to advanced | critical | API development, async programming |
+| JWT/OAuth2 | intermediate | critical | Authentication and authorization |
 
 ### Database
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| PostgreSQL | intermediate | critical | Relational database management |
-| Elasticsearch | basic to intermediate | nice-to-have | Advanced search capabilities |
+| PostgreSQL | intermediate | critical | Relational data modeling |
 | Redis | intermediate | important | Caching layer |
 
 ### DevOps
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Azure DevOps Pipelines | intermediate | critical | CI/CD automation |
+| Azure DevOps | intermediate | critical | CI/CD pipelines, release management |
 | Kubernetes (AKS) | intermediate | critical | Container orchestration |
 | Docker | intermediate | important | Containerization of services |
-| Azure Monitor / Log Analytics / Application Insights | basic to intermediate | important | Monitoring and logging |
 
 ### Soft Skills
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Communication | - | critical | Clear communication for collaboration and documentation |
+| Communication | - | critical | Effective collaboration in a distributed team |
 | Problem-solving | - | critical | Troubleshooting and debugging |
-| Team collaboration | - | important | Agile practices, code reviews |
 
 ## Team Composition
 
@@ -62,15 +58,16 @@
 
 | Role | Count | Key Skills | Seniority |
 |------|-------|------------|-----------|
-| Tech Lead | 1 | Architecture, Code review, Azure AKS & DevOps | Senior |
-| Frontend Developer | 2 | React.js, Redux, Material-UI | Mid/Senior |
-| Backend Developer | 2 | FastAPI, Python, SQLAlchemy | Mid/Senior |
-| DevOps Engineer | 1 | Azure Pipelines, Kubernetes, Docker, Monitoring | Mid/Senior |
+| Tech Lead | 1 | Architecture, Code review, Technical decisions | Senior |
+| Frontend Developer | 2 | React.js, JavaScript/TypeScript, UI/UX | Mid/Senior |
+| Backend Developer | 2 | FastAPI, Python, JWT/OAuth2 | Mid/Senior |
+| DevOps Engineer | 1 | Azure DevOps, Kubernetes, Docker | Mid/Senior |
+| QA Engineer | 1 | Test automation, Manual testing | Mid |
 
 ### Optional Roles
 
-- **QA Engineer** (1) - During testing phases
-  - Key Skills: Test automation, Manual testing
+- **UI/UX Designer** (1) - Design improvements
+  - Key Skills: Design tools, User experience
 
 ## Skill Development
 
@@ -81,19 +78,19 @@
 - React patterns course
 
 **FastAPI:**
-- FastAPI official docs
+- FastAPI documentation
 - Async programming tutorials
 
 **Kubernetes:**
 - Kubernetes official docs
-- K8s for Developers
+- KubeCon videos
 
 ### Recommended Certifications
 
 | Certification | Relevance |
 |---------------|-----------|
-| Azure Solutions Architect | Azure infrastructure and architecture |
-| AWS Certified Cloud Practitioner | Cloud fundamentals |
+| Azure Solutions Architect | Azure cloud architecture and deployment |
+| Certified Kubernetes Administrator (CKA) | Container orchestration expertise |
 
 ## Knowledge Transfer
 
@@ -103,16 +100,15 @@
 
 - Codebase walkthrough
 - Architecture overview
-- DevOps pipeline setup
+- CI/CD pipeline setup
 - Azure cloud services overview
-- Project management tools and workflows
+- Development and deployment workflows
 
 ### Documentation to Review
 
-- Architecture diagrams
-- API documentation
-- Deployment guides
-- Onboarding and team practices
+- Architecture design docs
+- API specifications
+- Onboarding guide
 
 ---
 
