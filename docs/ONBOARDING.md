@@ -8,13 +8,13 @@
 
 ## Welcome
 
-Test - Test is a comprehensive project management platform leveraging Azure cloud services, with a modern tech stack including FastAPI, React.js, and Kubernetes for scalable deployment.
+Welcome to the Test - Test project. This platform manages project milestones, tracks hours, facilitates client feedback, opportunity management, and testing activities. It uses modern cloud-native tech on Azure with microservices architecture.
 
 ### Key Contacts
 
 | Role | Responsibilities |
 |------|------------------|
-| Tech Lead | Code reviews, architecture decisions |
+| Tech Lead | Technical decisions, code reviews, architecture |
 | Project Manager | Sprint planning, stakeholder communication |
 
 ## Getting Started
@@ -23,16 +23,19 @@ Test - Test is a comprehensive project management platform leveraging Azure clou
 
 | Tool | Version | Installation |
 |------|---------|--------------|
-| Node.js | 18+ | `Download from nodejs.org or use package managers` |
+| Python | 3.9+ | `Download from python.org or use pyenv` |
+| Node.js | 16+ | `Download from nodejs.org` |
 | Docker | Latest | `Download from docker.com` |
-| Git | Latest | `brew install git or equivalent` |
+| Git | Latest | `brew install git or from git-scm.com` |
 
 ### Environment Setup
 
 1. Clone the repository: git clone <repo-url>
-2. Create environment variables: cp .env.example .env and update as needed
-3. Install dependencies: npm install (frontend), pip install -r requirements.txt (backend)
-4. Start local development servers: npm run dev (frontend), uvicorn main:app --reload (backend)
+2. Create and configure environment variables: copy .env.example to .env and update as needed
+3. Install backend dependencies: cd src/backend && pip install -r requirements.txt
+4. Install frontend dependencies: cd src/frontend && npm install
+5. Run backend: uvicorn api.main:app --reload
+6. Run frontend: npm run start
 
 ### Quick Start Commands
 
@@ -41,19 +44,19 @@ Test - Test is a comprehensive project management platform leveraging Azure clou
 git clone <repo-url>
 
 # install_backend
-pip install -r backend/requirements.txt
+pip install -r src/backend/requirements.txt
 
 # install_frontend
-npm install --prefix frontend
+npm install
 
 # start_backend
-uvicorn backend.main:app --reload
+uvicorn api.main:app --reload
 
 # start_frontend
-npm run dev --prefix frontend
+npm run start
 
 # run_tests
-pytest tests/ (backend), npm test --prefix frontend
+pytest
 
 ```
 
@@ -65,9 +68,9 @@ pytest tests/ (backend), npm test --prefix frontend
 |--------|---------|
 | `main` | Production-ready code |
 | `develop` | Integration branch for ongoing development |
-| `feature/*` | Feature branches branched from develop |
-| `bugfix/*` | Bug fix branches |
-| `hotfix/*` | Urgent fixes on main |
+| `feature/*` | Feature branches off develop |
+| `bugfix/*` | Bug fixes off develop |
+| `hotfix/*` | Hotfixes off main |
 
 ### Commit Conventions
 
@@ -78,24 +81,25 @@ pytest tests/ (backend), npm test --prefix frontend
 **Examples:**
 ```
 feat(api): add new endpoint
-fix(db): resolve connection issue
+fix(auth): resolve token expiry bug
 docs(readme): update setup instructions
 ```
 
 ### Pull Request Process
 
 1. Create feature branch from develop
-2. Commit changes and push
-3. Open PR targeting develop
-4. Request review and address comments
-5. Merge after approval
+2. Implement changes and commit
+3. Push branch and open PR against develop
+4. Request review from team members
+5. Address feedback
+6. Merge after approval
 
 ### Code Review Guidelines
 
 - Review within 24 hours
 - Check code quality, standards, and tests
 - Verify documentation updates
-- Ensure no breaking changes
+- Ensure CI pipeline passes
 
 ## Coding Standards
 
@@ -105,65 +109,69 @@ Follow PEP8 for Python, Airbnb style for JavaScript
 
 ### Linting
 
-Use flake8, ESLint, and Prettier configured in project
+Use flake8 for Python, ESLint for JS
 
 ### Testing Requirements
 
-- **Unit Tests:** All new functions must have unit tests
-- **Integration Tests:** Cover API endpoints and critical flows
+- **Unit Tests:** All new functions/classes must have unit tests
+- **Integration Tests:** Test API endpoints and critical workflows
 - **Coverage Minimum:** 80%
 
 ### Documentation Requirements
 
 - Use docstrings for Python functions
 - Update README for new features
-- Maintain API docs with Swagger or OpenAPI
+- Document API endpoints with OpenAPI or Swagger
 
 ## Architecture Overview
 
-Microservices architecture with FastAPI backend, React frontend, orchestrated via AKS, with Azure services for monitoring, logging, and storage.
+Microservices architecture with FastAPI backend, React frontend, orchestrated on AKS, with Redis caching and PostgreSQL database.
 
 ### Key Components
 
 | Component | Description |
 |-----------|-------------|
-| Frontend | React.js SPA with Redux and Material-UI |
-| Backend | FastAPI microservices with SQLAlchemy ORM |
-| Database | PostgreSQL with Redis caching and Elasticsearch for search |
-| Infrastructure | Azure Kubernetes Service, Azure App Service, Blob Storage |
+| Backend | FastAPI microservice with JWT/OAuth2 |
+| Frontend | React.js SPA with Redux |
+| Database | PostgreSQL for relational data |
+| Cache | Redis for caching |
+| Orchestration | Kubernetes (AKS) for deployment |
 
 ### Important Patterns
 
-- Containerization with Docker
-- CI/CD with Azure Pipelines
-- Kubernetes deployment manifests
-- Monitoring with Azure Monitor and Application Insights
+- API Gateway pattern
+- Microservices with containerization
+- CI/CD pipelines with Azure DevOps
 
 ## Troubleshooting
 
 ### Common Issues
 
-**Port conflicts during local startup**
+**Port conflicts or container startup issues**
 
-Solution: Stop conflicting process or change port in environment variables
+Solution: Check running containers, use docker ps, and kill conflicting processes
 
 **Database connection errors**
 
-Solution: Ensure Docker containers are running and environment variables are correct
+Solution: Ensure PostgreSQL and Redis containers are running, check environment variables
+
+**CI/CD pipeline failures**
+
+Solution: Review logs, verify pipeline permissions, and environment secrets
 
 ### Getting Help
 
 - Consult the documentation sections
-- Ask questions in #development Slack channel
+- Ask in #dev-team Slack channel
 - Tag the Tech Lead for urgent issues
 
 ## Useful Resources
 
-- [Azure Documentation](https://docs.microsoft.com/en-us/azure/)
-- [FastAPI Docs](https://fastapi.tiangolo.com/)
-- [React.js Docs](https://reactjs.org/docs/getting-started.html)
-- [Azure DevOps Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
-- [Kubernetes](https://kubernetes.io/docs/home/)
+- [Azure DevOps documentation](https://docs.microsoft.com/en-us/azure/devops/)
+- [FastAPI docs](https://fastapi.tiangolo.com/)
+- [React docs](https://reactjs.org/docs/getting-started.html)
+- [Kubernetes docs](https://kubernetes.io/docs/)
+- [Azure architecture best practices](https://docs.microsoft.com/en-us/azure/architecture/)
 
 ---
 
