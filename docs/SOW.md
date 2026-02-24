@@ -10,17 +10,16 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This Statement of Work (SOW) defines the scope, deliverables, milestones, roles, and responsibilities for the 'Test - Test' project, supporting project planning and contractual commitments.
+This Statement of Work (SOW) defines the scope, deliverables, milestones, roles, and responsibilities for the 'Test - Test' project, establishing a formal agreement between the client and provider.
 
 ### 1.2 Background
-The project involves minimal initial details, primarily focusing on establishing a foundation for testing activities and stakeholder management, pending further requirements.
+The project is in early planning stages with minimal initial details, focusing on testing activities and opportunity management, hosted on Azure with funding via AWS Credits.
 
 ### 1.3 Objectives
 
 - Define project scope and deliverables
-- Establish project milestones and timelines
-- Clarify roles and responsibilities
-- Set communication and change management processes
+- Establish project schedule and milestones
+- Ensure client approval and satisfaction
 
 ## 2. Scope of Work
 
@@ -28,53 +27,62 @@ The project involves minimal initial details, primarily focusing on establishing
 
 | Item | Description |
 |------|-------------|
-| Project management setup | Establish project tracking and milestone management |
-| Stakeholder communication framework | Implement stakeholder contact and feedback logging |
-| Opportunity and funding tracking setup | Configure opportunity and billing management |
+| Project planning and scheduling | - |
+| Development of project management tools | - |
+| Client feedback portal setup | - |
+| Opportunity tracking system | - |
 
 ### 2.2 Out of Scope
 
 | Item | Reason |
 |------|--------|
-| External system integrations | Not specified or required at this stage |
-| Development beyond initial setup | Pending detailed requirements |
+| Detailed technical environment setup | - |
+| Specific testing scope beyond initial planning | - |
+| Post-deployment support | - |
 
 ### 2.3 Assumptions
 
-- Client will provide detailed requirements in future phases
+- Project dates are placeholders and will be finalized
+- Technical environment will be clarified upon further discussion
 
 ## 3. Deliverables
 
 | ID | Deliverable | Description | Phase |
 |----|-------------|-------------|-------|
-| D-001 | Project Management Dashboard | A web-based dashboard displaying project status, milestones, and progress indicators. | mvp |
-| D-002 | Stakeholder Communication Portal | A portal for stakeholders to view updates, provide feedback, and approve deliverables. | mvp |
-| D-003 | Opportunity & Funding Management Module | Module to track opportunity details, funding, and project stage. | phase2 |
+| D-001 | Project Schedule and Milestones | Detailed project schedule with milestones, deadlines, and resource allocations. | mvp |
+| D-002 | Client Feedback Portal | A web portal enabling client review and approval of deliverables. | mvp |
+| D-003 | Opportunity Management System | System to track and manage sales opportunities. | phase2 |
 
 ### 3.1 Acceptance Criteria
 
-**D-001: Project Management Dashboard**
-- Dashboard is functional, displays accurate data, and supports multiple users.
+**D-001: Project Schedule and Milestones**
+- Schedule approved by client
 
-**D-002: Stakeholder Communication Portal**
-- Portal is accessible, feedback logging works, and approval statuses are visible.
+**D-002: Client Feedback Portal**
+- Portal functional and accessible
 
-**D-003: Opportunity & Funding Management Module**
-- Accurate opportunity data management and funding status updates.
+**D-003: Opportunity Management System**
+- Opportunity data accurately recorded
 
 ## 4. Milestones
 
-### M-001: Initial Setup Complete
+### M-001: Project Planning Completion
 
-**Description:** Completion of project management, stakeholder portal, and opportunity modules for MVP.
+**Description:** Approval of project schedule, scope, and initial deliverables.
 
 **Associated Deliverables:**
 - D-001
+
+### M-002: Portal Deployment
+
+**Description:** Client feedback portal is deployed and accessible.
+
+**Associated Deliverables:**
 - D-002
 
-### M-002: Phase 2 Module Delivery
+### M-003: Opportunity System Launch
 
-**Description:** Delivery of opportunity & funding tracking module.
+**Description:** Opportunity management system is operational.
 
 **Associated Deliverables:**
 - D-003
@@ -83,15 +91,16 @@ The project involves minimal initial details, primarily focusing on establishing
 
 ### 5.1 Provider Responsibilities
 
-- Develop and deliver system modules as per specifications
-- Coordinate testing and deployment
-- Provide documentation and support
+- Develop and deploy project management tools
+- Create client feedback portal
+- Implement opportunity tracking system
+- Coordinate with client for approvals
 
 ### 5.2 Client Responsibilities
 
-- Provide detailed requirements and feedback
-- Approve deliverables
-- Ensure timely communication
+- Provide requirements and feedback
+- Review and approve deliverables
+- Participate in scheduled meetings
 
 ## 6. Communication Plan
 
@@ -99,22 +108,22 @@ The project involves minimal initial details, primarily focusing on establishing
 
 | Type | Frequency | Participants |
 |------|-----------|--------------|
-| Status Update | Weekly | Project Manager, Client Lead |
-| Milestone Review | At milestone completion | All stakeholders |
+| Status Update | Bi-weekly | Client, Project Team |
+| Review Meetings | At milestone completion | Client, Project Team |
 
 ### 6.2 Reporting
-Progress reports delivered bi-weekly via email
+Progress reports to be shared bi-weekly via email
 
 ### 6.3 Escalation Process
-Issues escalated to project manager and client contact within 24 hours
+Issues to be escalated to project manager and client contact immediately
 
 ## 7. Change Management
 
 ### 7.1 Change Request Process
-All change requests must be documented and approved via formal change request forms.
+All change requests must be documented and approved by both parties before implementation.
 
 ### 7.2 Impact Assessment
-Each change will be analyzed for scope, schedule, and cost impact before approval.
+Each change will be assessed for scope, schedule, and cost impact prior to approval.
 
 ---
 
