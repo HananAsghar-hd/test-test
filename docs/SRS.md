@@ -10,215 +10,166 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document provides a detailed technical specification for the 'Test - Test' project, intended for development and technical teams to understand system functionalities, interfaces, and constraints.
+This document provides a detailed technical specification for the 'Test - Test' project, intended for development and technical teams to understand system requirements, functional and non-functional specifications, and interfaces.
 
 ### 1.2 Scope
-The system encompasses project management, stakeholder communication, opportunity tracking, and resource management functionalities to support testing activities for the 'Test - Test' project. It integrates with Azure hosting, billing via AWS Credits, and manages user roles and data security.
+The system encompasses testing activities for the client 'Test', hosted on Azure, with project management, client communication, and opportunity tracking functionalities. Specific testing scope and detailed technical requirements are currently undefined and require clarification.
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
 
 | Term | Definition |
 |------|------------|
-| MVP | Minimum Viable Product, the initial version with core functionalities. |
-| Stakeholder | Individuals or entities involved in or affected by the project. |
+| Testing Activities | Various testing types such as unit, integration, system, and acceptance testing to be performed as per project scope. |
+| Azure | Microsoft's cloud hosting platform used for deployment and testing. |
+| Opportunity | Sales opportunity with associated details such as amount, stage, and description. |
 
 ### 1.4 References
 
-- Project Requirements Analysis Document
-- Client Communications
-- Azure and AWS documentation
+- Initial requirements analysis document
+- Client communications (pending)
 
 ### 1.5 Overview
-This SRS outlines functional and non-functional requirements, system interfaces, constraints, and assumptions to guide development and ensure alignment with project goals.
+This SRS outlines the technical requirements, interfaces, and constraints for the 'Test - Test' project, which is currently in early planning stages with placeholder dates and minimal scope details.
 
 ## 2. Overall Description
 
 ### 2.1 Product Perspective
-The system is a standalone web-based application supporting project and stakeholder management, integrated with cloud services for hosting and billing.
+The system is a testing platform hosted on Azure, integrated with opportunity management and client communication modules. It is part of a larger client engagement process, with dependencies on external cloud infrastructure and funding sources.
 
 ### 2.2 Product Functions
 
-- Track project status, milestones, and deadlines
-- Manage stakeholder contact details and communication logs
-- Monitor opportunity details including funding and stage
-- Manage team members and roles
-- Ensure data security and system performance
+- Manage project schedule and milestones
+- Track project hours and progress
+- Facilitate client feedback and approval
+- Manage opportunity details
+- Support testing activities and reporting
 
 ### 2.3 User Classes and Characteristics
 
-**Project Manager**
-- Description: Oversees project progress, manages milestones, and communicates with stakeholders.
+**Client Representative**
+- Description: Client's primary contact responsible for providing requirements and approving deliverables.
 - Characteristics:
-  - Proficient in project management tools
-  - Access to all system modules
+  - Technical awareness
+  - Decision-making authority
 
-**Stakeholder (Client)**
-- Description: Provides requirements, feedback, and approvals.
-- Characteristics:
-  - Limited technical access
-  - Uses system for communication and review
-
-**Technical Lead**
-- Description: Supports technical implementation and ensures system integrity.
+**Project Team Member**
+- Description: Team responsible for executing testing activities and project management.
 - Characteristics:
   - Technical expertise
-  - Access to system backend
+  - Collaboration skills
 
-**Team Member**
-- Description: Participates in testing activities and updates task statuses.
+**Sales & Delivery Lead**
+- Description: Oversees project delivery, manages client relationships, and coordinates technical efforts.
 - Characteristics:
-  - Role-specific access
+  - Leadership
+  - Client engagement
 
 ### 2.4 Operating Environment
-The system will be hosted on Azure cloud platform, accessible via modern web browsers, with data stored securely and backups managed daily. Billing is processed through AWS Credits.
+The system will operate on Azure cloud infrastructure, accessible via web interfaces, supporting multiple concurrent users with secure authentication.
 
 ### 2.5 Design and Implementation Constraints
 
-- System must support at least 10 concurrent users
-- Role-based access control must be implemented
-- Data must be encrypted at rest and in transit
-- Project start and end dates are placeholders and will be updated
+- Placeholder project dates (9999-09-09) require clarification
+- Limited technical environment details
+- Funding via AWS Credits may impose resource restrictions
 
 ### 2.6 Assumptions and Dependencies
 
-- Project scope is primarily testing activities, pending detailed requirements
-- Actual project dates and detailed client goals will be provided later
-- Azure hosting, AWS billing, and funding dependencies are external and assumed available
+- Project is in the planning stage with minimal initial details
+- Azure hosting is available and configured
+- Funding and timeline details are placeholders and subject to change
 
 ## 3. System Features
 
-### 3.1 SF-001: Project Management Dashboard
+### 3.1 SF-001: Project Management
 
-**Description:** Provides real-time tracking of project status, milestones, and deadlines.
+**Description:** Manage project schedule, milestones, and hours tracking.
 **Priority:** high
 
 **Functional Requirements:**
 
-**FR-001**: Display project status, health indicators, and progress metrics.
-- *Inputs:* Project data from database
-- *Processing:* Aggregate data, compute status indicators
-- *Outputs:* Dashboard view with status indicators
+**FR-001**: Establish and maintain project schedule with start/end dates, milestones, and deliverables.
+- *Inputs:* Project start/end dates, milestones, deliverables list
+- *Processing:* Schedule creation, milestone tracking, hours logging
+- *Outputs:* Updated project timeline, progress reports
 - *Acceptance Criteria:*
-  - Dashboard displays accurate project status
-  - Supports multiple users viewing concurrently
+  - Schedule is created and accessible to team
+  - Milestones are tracked and updated
+  - Hours logged match estimated hours (66 hours)
 
-**FR-002**: Manage project milestones and deadlines.
-- *Inputs:* Milestone data entries
-- *Processing:* Update milestone statuses, notify on approaching deadlines
-- *Outputs:* Milestone list with status updates
-- *Acceptance Criteria:*
-  - Milestones can be added, edited, and marked complete
-  - Notifications are triggered for upcoming deadlines
+### 3.2 SF-002: Client Feedback & Approval
 
-### 3.2 SF-002: Stakeholder & Communication Management
-
-**Description:** Maintain stakeholder contact details, communication logs, and approval statuses.
+**Description:** Facilitate mechanisms for client review, feedback, and approval at key stages.
 **Priority:** high
 
 **Functional Requirements:**
 
-**FR-003**: Store and retrieve stakeholder contact information.
-- *Inputs:* Contact details input
-- *Processing:* Save to database
-- *Outputs:* Stakeholder profile view
+**FR-002**: Provide a portal or communication channel for client feedback and approval.
+- *Inputs:* Client comments, approval signals
+- *Processing:* Feedback collection, status updates
+- *Outputs:* Approved deliverables, feedback logs
 - *Acceptance Criteria:*
-  - Contact info can be added, edited, and viewed
-  - Communication logs are linked to stakeholders
+  - Feedback can be submitted and tracked
+  - Approvals are recorded and accessible
 
-**FR-004**: Track client feedback and approval status.
-- *Inputs:* Feedback submissions
-- *Processing:* Update approval status and comments
-- *Outputs:* Feedback history and approval indicators
-- *Acceptance Criteria:*
-  - Feedback can be logged and reviewed
-  - Approval statuses are clearly indicated
+### 3.3 SF-003: Opportunity & Sales Tracking
 
-### 3.3 SF-003: Opportunity & Funding Tracking
-
-**Description:** Monitor opportunity details, funding amounts, and project stage.
-**Priority:** high
-
-**Functional Requirements:**
-
-**FR-005**: Record opportunity details including amount, description, and stage.
-- *Inputs:* Opportunity data input
-- *Processing:* Store and update opportunity info
-- *Outputs:* Opportunity overview dashboard
-- *Acceptance Criteria:*
-  - Opportunity details are accurately stored and retrievable
-  - Stage transitions are logged
-
-**FR-006**: Manage billing and funding via AWS Credits.
-- *Inputs:* Funding data
-- *Processing:* Validate and record funding status
-- *Outputs:* Funding reports
-- *Acceptance Criteria:*
-  - Funding data is accurate and auditable
-  - Funding status updates are reflected in reports
-
-### 3.4 SF-004: Resource & Team Management
-
-**Description:** Maintain team member roles, responsibilities, and contact info.
+**Description:** Manage opportunity details including amount, stage, and description.
 **Priority:** medium
 
 **Functional Requirements:**
 
-**FR-007**: Add, edit, and view team member profiles.
-- *Inputs:* Team member details
-- *Processing:* Update database records
-- *Outputs:* Team member list view
+**FR-003**: Track opportunity status, amount ($2,333.00), and related details.
+- *Inputs:* Opportunity data
+- *Processing:* Data entry, status updates
+- *Outputs:* Opportunity reports, dashboards
 - *Acceptance Criteria:*
-  - Team profiles are manageable and accessible
-  - Roles and responsibilities are clearly assigned
+  - Opportunity details are accurately recorded
+  - Status updates are reflected in reports
 
 ## 4. External Interface Requirements
 
 ### 4.1 User Interfaces
 
-- Web-based dashboard accessible via modern browsers
-- Responsive UI for desktop and mobile devices
+- Web-based dashboard for project management and client feedback
 
 ### 4.2 Hardware Interfaces
 
-- Standard cloud server infrastructure on Azure
+- None specified
 
 ### 4.3 Software Interfaces
 
-- **Azure Cloud Platform**: Hosting environment for the application
-- **AWS Billing System**: Handles project funding and billing via AWS Credits
+- **Azure Cloud Services**: Hosting environment for deployment and testing.
 
 ### 4.4 Communications Interfaces
 
-- HTTPS REST APIs for data exchange
-- WebSocket for real-time notifications
+- HTTPS for secure communication
 
 ## 5. Non-Functional Requirements
 
 ### 5.1 Performance
 
-- Support at least 10 concurrent users without degradation
+- System response under 2 seconds for user actions
 
 ### 5.2 Security
 
-- Role-based access control (RBAC) implemented
-- Data encrypted at rest and in transit
+- Secure handling of client data, compliance with industry standards
 
 ### 5.3 Reliability
 
-- System uptime of 99.5% with failover mechanisms
+- System uptime of 99.9%
 
 ### 5.4 Availability
 
-- System available 24/7 with scheduled maintenance windows
+- Accessible during standard working hours
 
 ### 5.5 Maintainability
 
-- Codebase modular and documented for easy updates
-- Regular backups and logging enabled
+- Modular design for ease of updates
 
 ### 5.6 Portability
 
-- Compatible with major browsers and mobile devices
+- Accessible via standard web browsers
 
 ---
 
