@@ -8,13 +8,13 @@
 
 ## Welcome
 
-Welcome to the Test - Test project. This platform manages project milestones, tracks hours, facilitates client feedback, opportunity management, and testing activities. It uses modern cloud-native tech on Azure with microservices architecture.
+Welcome to the Test - Test project. This platform manages project milestones, client feedback, and opportunity tracking with a modern Azure-based stack, including FastAPI backend, React frontend, and Kubernetes infrastructure.
 
 ### Key Contacts
 
 | Role | Responsibilities |
 |------|------------------|
-| Tech Lead | Technical decisions, code reviews, architecture |
+| Tech Lead | Architectural decisions, code reviews |
 | Project Manager | Sprint planning, stakeholder communication |
 
 ## Getting Started
@@ -23,19 +23,17 @@ Welcome to the Test - Test project. This platform manages project milestones, tr
 
 | Tool | Version | Installation |
 |------|---------|--------------|
-| Python | 3.9+ | `Download from python.org or use pyenv` |
-| Node.js | 16+ | `Download from nodejs.org` |
+| Node.js | 18+ | `Download from nodejs.org or use package managers` |
 | Docker | Latest | `Download from docker.com` |
-| Git | Latest | `brew install git or from git-scm.com` |
+| kubectl | Latest | `Follow Kubernetes docs` |
+| Git | Latest | `brew install git or equivalent` |
 
 ### Environment Setup
 
 1. Clone the repository: git clone <repo-url>
-2. Create and configure environment variables: copy .env.example to .env and update as needed
-3. Install backend dependencies: cd src/backend && pip install -r requirements.txt
-4. Install frontend dependencies: cd src/frontend && npm install
-5. Run backend: uvicorn api.main:app --reload
-6. Run frontend: npm run start
+2. Copy .env.example to .env and configure environment variables
+3. Build and run Docker containers locally with docker-compose
+4. Set up Kubernetes cluster access (Azure AKS credentials)
 
 ### Quick Start Commands
 
@@ -44,13 +42,13 @@ Welcome to the Test - Test project. This platform manages project milestones, tr
 git clone <repo-url>
 
 # install_backend
-pip install -r src/backend/requirements.txt
+cd src/backend && pip install -r requirements.txt
 
 # install_frontend
-npm install
+cd src/frontend && npm install
 
 # start_backend
-uvicorn api.main:app --reload
+uvicorn src.backend.main:app --reload
 
 # start_frontend
 npm run start
@@ -66,11 +64,11 @@ pytest
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | Production-ready code |
+| `main` | Stable, production-ready code |
 | `develop` | Integration branch for ongoing development |
-| `feature/*` | Feature branches off develop |
-| `bugfix/*` | Bug fixes off develop |
-| `hotfix/*` | Hotfixes off main |
+| `feature/*` | Feature branches derived from develop |
+| `bugfix/*` | Bug fix branches |
+| `hotfix/*` | Urgent fixes on main |
 
 ### Commit Conventions
 
@@ -80,98 +78,91 @@ pytest
 
 **Examples:**
 ```
-feat(api): add new endpoint
-fix(auth): resolve token expiry bug
+feat(api): add new search endpoint
+fix(db): resolve connection leak
 docs(readme): update setup instructions
 ```
 
 ### Pull Request Process
 
-1. Create feature branch from develop
-2. Implement changes and commit
-3. Push branch and open PR against develop
-4. Request review from team members
-5. Address feedback
-6. Merge after approval
+1. Create branch from develop
+2. Implement feature or fix
+3. Push branch and open PR
+4. Request review, address comments
+5. Merge after approval
 
 ### Code Review Guidelines
 
 - Review within 24 hours
 - Check code quality, standards, and tests
-- Verify documentation updates
-- Ensure CI pipeline passes
+- Ensure documentation is updated
+- Verify CI/CD passes
 
 ## Coding Standards
 
 ### Style Guide
 
-Follow PEP8 for Python, Airbnb style for JavaScript
+Follow PEP8 for Python, Airbnb for JavaScript
 
 ### Linting
 
-Use flake8 for Python, ESLint for JS
+Use flake8, ESLint, Prettier
 
 ### Testing Requirements
 
-- **Unit Tests:** All new functions/classes must have unit tests
-- **Integration Tests:** Test API endpoints and critical workflows
+- **Unit Tests:** All new functions must have tests
+- **Integration Tests:** Cover API endpoints and critical workflows
 - **Coverage Minimum:** 80%
 
 ### Documentation Requirements
 
-- Use docstrings for Python functions
-- Update README for new features
-- Document API endpoints with OpenAPI or Swagger
+- JSDoc for frontend functions
+- FastAPI route docstrings
+- Update README for major features
 
 ## Architecture Overview
 
-Microservices architecture with FastAPI backend, React frontend, orchestrated on AKS, with Redis caching and PostgreSQL database.
+Microservices architecture with FastAPI backend, React frontend, deployed on AKS with CI/CD pipelines.
 
 ### Key Components
 
 | Component | Description |
 |-----------|-------------|
-| Backend | FastAPI microservice with JWT/OAuth2 |
 | Frontend | React.js SPA with Redux |
-| Database | PostgreSQL for relational data |
-| Cache | Redis for caching |
-| Orchestration | Kubernetes (AKS) for deployment |
+| Backend | FastAPI microservices |
+| Database | PostgreSQL, Redis, Elasticsearch |
+| Infrastructure | Azure AKS, Blob Storage, CDN |
 
 ### Important Patterns
 
-- API Gateway pattern
-- Microservices with containerization
-- CI/CD pipelines with Azure DevOps
+- Containerization with Docker
+- Kubernetes deployment
+- CI/CD with GitHub Actions
 
 ## Troubleshooting
 
 ### Common Issues
 
-**Port conflicts or container startup issues**
+**Port conflicts or container startup failures**
 
-Solution: Check running containers, use docker ps, and kill conflicting processes
+Solution: Check Docker and Kubernetes logs, ensure ports are free
 
 **Database connection errors**
 
-Solution: Ensure PostgreSQL and Redis containers are running, check environment variables
-
-**CI/CD pipeline failures**
-
-Solution: Review logs, verify pipeline permissions, and environment secrets
+Solution: Verify environment variables, ensure PostgreSQL and Redis are running
 
 ### Getting Help
 
-- Consult the documentation sections
-- Ask in #dev-team Slack channel
+- Consult the documentation
+- Ask in #dev-support Slack channel
 - Tag the Tech Lead for urgent issues
 
 ## Useful Resources
 
-- [Azure DevOps documentation](https://docs.microsoft.com/en-us/azure/devops/)
+- [Azure AKS documentation](https://learn.microsoft.com/en-us/azure/aks/)
 - [FastAPI docs](https://fastapi.tiangolo.com/)
 - [React docs](https://reactjs.org/docs/getting-started.html)
-- [Kubernetes docs](https://kubernetes.io/docs/)
-- [Azure architecture best practices](https://docs.microsoft.com/en-us/azure/architecture/)
+- [GitHub Actions](https://docs.github.com/en/actions)
 
 ---
 
