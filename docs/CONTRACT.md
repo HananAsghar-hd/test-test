@@ -24,7 +24,7 @@ Represented by: To be designated
 **CLIENT:**
 
 **Test**
-Address: https://www.test.com
+Address: To be confirmed
 Represented by: Hamza Farooq
 
 (hereinafter referred to as "Client")
@@ -35,12 +35,13 @@ Represented by: Hamza Farooq
 
 **WHEREAS:**
 
-This Agreement is entered into between the Provider and the Client for the purpose of developing a web-based project management, client feedback, and opportunity tracking system hosted on Azure, funded via AWS Credits, with the project tentatively scheduled to commence and end on placeholder dates.
+This Agreement is entered into between the Provider and the Client for the purpose of developing a project management portal and related modules as detailed herein, funded via AWS Credits and hosted on Azure.
 
 **OBJECTIVES:**
 - Define project scope and deliverables
-- Establish project schedule and milestones
-- Ensure client approval and satisfaction
+- Establish project milestones and timelines
+- Outline payment structure and responsibilities
+- Implement change management and dispute resolution procedures
 
 **NOW, THEREFORE**, in consideration of the mutual covenants and agreements set forth herein, the parties agree as follows:
 
@@ -48,11 +49,11 @@ This Agreement is entered into between the Provider and the Client for the purpo
 
 ## 1. DEFINITIONS
 
-**1.1 "Deliverables"** means The tangible or intangible outputs to be provided by the Provider to the Client as specified in the Scope of Work.
+**1.1 "Deliverables"** means The tangible or intangible items to be provided by the Provider to the Client as specified in the Scope of Work.
 
-**1.2 "Acceptance Criteria"** means The conditions that must be met for deliverables to be deemed accepted by the Client, including client review and approval.
+**1.2 "Acceptance Criteria"** means The conditions under which the Client will accept the deliverables, including functionality, performance, and quality standards.
 
-**1.3 "Change Request"** means A formal proposal for modifications to the scope, schedule, or costs of the project, which must be approved by both parties prior to implementation.
+**1.3 "Change Request"** means A formal proposal to modify the scope, schedule, or cost of the project, submitted in writing and subject to approval.
 
 ---
 
@@ -60,33 +61,32 @@ This Agreement is entered into between the Provider and the Client for the purpo
 
 ### 2.1 Description
 
-Development of a modular, cloud-native web application comprising project management APIs, client feedback portal, and opportunity tracking system, hosted on Azure, following the milestones and phases outlined.
+Development of a project management dashboard, client feedback portal, and opportunity & financial tracking module, including planning, development, testing, and deployment.
 
 ### 2.2 Deliverables
 
 | ID | Deliverable | Description | Phase |
 |----|-------------|-------------|-------|
-| D-001 | Project Schedule and Milestones | Detailed project schedule with milestones, deadlines, and resource allocations. | mvp |
-| D-002 | Client Feedback Portal | A web portal enabling client review and approval of deliverables. | mvp |
-| D-003 | Opportunity Management System | System to track and manage sales opportunities. | phase2 |
+| D-001 | Project Management Dashboard | A web-based dashboard for project milestones, progress, and status updates. | mvp |
+| D-002 | Client Feedback Portal | A secure portal for clients to submit feedback and approve deliverables. | mvp |
+| D-003 | Opportunity & Financial Tracking Module | Module to manage opportunity details, stages, and financial data. | phase2 |
 
 ### 2.3 In Scope
 
-- Project planning and scheduling
-- Development of project management tools
-- Client feedback portal setup
-- Opportunity tracking system
+- Project planning and milestone setup
+- Development of project management dashboard
+- Implementation of client communication portal
+- Opportunity and financial data management
 
 ### 2.4 Out of Scope
 
-- Detailed technical environment setup
-- Specific testing scope beyond initial planning
-- Post-deployment support
+- Technical testing procedures
+- Implementation of detailed testing scripts
 
 ### 2.5 Assumptions
 
-- Project dates are placeholders and will be finalized
-- Technical environment will be clarified upon further discussion
+- Project dates are placeholders and will be confirmed
+- Initial scope is minimal; detailed scope to be refined after further clarification
 
 ---
 
@@ -100,13 +100,13 @@ Development of a modular, cloud-native web application comprising project manage
 
 | ID | Milestone | Target | Deliverables |
 |----|-----------|--------|--------------|
-| M-001 | Project Planning Completion | Week 1 | D-001 |
-| M-002 | Portal Deployment | Week 5 | D-002 |
-| M-003 | Opportunity System Launch | Week 10 | D-003 |
+| M-001 | Project Initiation & Planning | Week 2 | D-001, D-002 |
+| M-002 | Core System Development | Week 10 | D-001, D-002 |
+| M-003 | Opportunity Module Deployment | Week 14 | D-003 |
 
 ### 3.4 Delays
 
-Delays caused by unforeseen circumstances or scope changes will be communicated promptly. The parties will agree on adjustments to schedule and costs in writing.
+Delays caused by unforeseen circumstances or scope changes will be communicated promptly. The parties agree to negotiate in good faith to adjust timelines accordingly.
 
 ---
 
@@ -121,62 +121,62 @@ Delays caused by unforeseen circumstances or scope changes will be communicated 
 | Milestone | Percentage | Amount | Trigger |
 |-----------|------------|--------|---------|
 | Contract Signing | 30% | USD 700.00 | Upon contract execution |
-| MVP Completion | 40% | USD 933.00 | Upon client acceptance of D-001 and D-002 |
-| Final Delivery | 30% | USD 700.00 | Upon client acceptance of D-003 |
+| MVP Delivery | 40% | USD 933.00 | Upon successful delivery and acceptance of D-001 and D-002 |
+| Final Deployment | 30% | USD 700.00 | Upon final deployment and acceptance of all deliverables |
 
 **4.4 Payment Terms:** Net 30 days from invoice date
 
-**4.5 Late Payment:** Interest at 1.5% per month or the maximum allowed by law, whichever is less, on overdue amounts.
+**4.5 Late Payment:** Late payments shall accrue interest at 1.5% per month or the maximum permitted by law, whichever is lower.
 
 ---
 
 ## 5. ACCEPTANCE PROCEDURE
 
-**5.1 Submission:** Deliverables will be submitted electronically via agreed channels.
+**5.1 Submission:** Deliverables will be submitted via designated project management platform or email.
 
-**5.2 Review Period:** 5 business days
+**5.2 Review Period:** 10 business days
 
-**5.3 Acceptance Criteria:** Deliverables meet specifications and acceptance criteria; no material defects.
+**5.3 Acceptance Criteria:** Deliverables meet the specified acceptance criteria and are free of critical defects.
 
-**5.4 Rejection Procedure:** Rejections must be documented with reasons. The Provider will rectify issues within a mutually agreed timeframe.
+**5.4 Rejection Procedure:** Rejections must be communicated in writing with detailed reasons within the review period. The Provider shall rectify issues promptly.
 
-**5.5 Deemed Acceptance:** If no response is provided within review period, deliverables shall be deemed accepted.
+**5.5 Deemed Acceptance:** If no response is provided within the review period, deliverables shall be deemed accepted.
 
 ---
 
 ## 6. CHANGE MANAGEMENT
 
-**6.1 Change Request Process:** All change requests must be documented in writing and approved by authorized representatives of both parties before implementation.
+**6.1 Change Request Process:** All change requests must be submitted in writing, specifying scope, impact, and cost implications. Changes are subject to mutual approval.
 
-**6.2 Impact Assessment:** Each change will be assessed for scope, schedule, and cost impact, and adjustments will be documented.
+**6.2 Impact Assessment:** The Provider shall assess the impact of proposed changes on scope, schedule, and costs and communicate this to the Client for approval.
 
-**6.3 Approval Process:** Changes require written approval from both parties.
+**6.3 Approval Process:** Changes are approved when both parties sign a written Change Order.
 
-**6.4 Pricing for Changes:** Additional work outside scope will be billed at agreed rates or as per change order.
+**6.4 Pricing for Changes:** Additional work outside the scope will be billed at agreed hourly rates or fixed prices as per Change Orders.
 
 ---
 
 ## 7. INTELLECTUAL PROPERTY
 
-**7.1 Ownership:** Pre-existing IP remains with the respective party. Work product developed under this agreement shall be owned by the Provider until full payment, after which ownership transfers to the Client.
+**7.1 Ownership:** All intellectual property rights in the work product shall be owned by the Client upon full payment.
 
-**7.2 Work Product:** All deliverables and work products created during the project shall be owned by the Client upon full payment.
+**7.2 Work Product:** The Provider grants the Client a perpetual, worldwide, non-exclusive license to use the deliverables.
 
-**7.3 Pre-existing IP:** Each party retains ownership of its pre-existing IP.
+**7.3 Pre-existing IP:** Pre-existing IP of either party remains the property of that party. The Provider grants the Client a license to use Provider’s pre-existing IP incorporated into the deliverables.
 
-**7.4 Third-Party IP:** Any third-party components used will be licensed appropriately, and the Provider will ensure compliance.
+**7.4 Third-Party IP:** Any third-party IP used will be licensed or obtained with appropriate rights for the Client.
 
-**7.5 License Grants:** Provider grants the Client a non-exclusive, perpetual license to use the work product for its intended purpose.
+**7.5 License Grants:** Provider grants the Client a license to use any third-party components incorporated into the deliverables.
 
 ---
 
 ## 8. CONFIDENTIALITY
 
-**8.1 Definition:** Any non-public, proprietary, or confidential information disclosed by either party.
+**8.1 Definition:** Confidential Information includes all non-public, proprietary, or sensitive information disclosed by either party.
 
-**8.2 Obligations:** Parties shall keep confidential information secure and not disclose to third parties without prior consent.
+**8.2 Obligations:** Both parties shall keep Confidential Information confidential and shall not disclose to third parties without prior written consent.
 
-**8.3 Exceptions:** ['Information already known publicly', 'Information independently developed', 'Information disclosed with prior consent']
+**8.3 Exceptions:** ['Information already known publicly', 'Information independently developed', 'Information disclosed with consent']
 
 **8.4 Duration:** Confidentiality obligations shall survive for 3 years after termination.
 
@@ -185,12 +185,12 @@ Delays caused by unforeseen circumstances or scope changes will be communicated 
 ## 9. WARRANTIES
 
 **9.1 Provider Warranties:**
-- Work will conform to the specifications and acceptance criteria.
-- Provider has the necessary expertise and resources to perform the services.
+- The work will be performed in a professional and workmanlike manner
+- Deliverables will conform to the specifications and acceptance criteria
 
-**9.2 Warranty Period:** 12 months from acceptance of final deliverable.
+**9.2 Warranty Period:** 90 days from acceptance
 
-**9.3 Warranty Remedies:** Provider shall correct any non-conforming work at no additional cost during the warranty period.
+**9.3 Warranty Remedies:** Defective deliverables will be corrected or replaced at Provider’s expense.
 
 **9.4 Disclaimer:** Except as expressly provided, the Provider makes no other warranties, express or implied.
 
@@ -198,21 +198,21 @@ Delays caused by unforeseen circumstances or scope changes will be communicated 
 
 ## 10. SUPPORT AND MAINTENANCE
 
-**10.1 Warranty Support:** Support for warranty issues during the warranty period.
+**10.1 Warranty Support:** Support for defect correction during warranty period.
 
-**10.2 Post-Warranty Support:** Support options available upon request, billed separately.
+**10.2 Post-Warranty Support:** Support options available at additional cost, to be agreed separately.
 
-**10.3 Service Levels:** Service levels to be defined in a separate support agreement.
+**10.3 Service Levels:** Service levels and response times will be defined in a separate Support Agreement.
 
-**10.4 Maintenance Options:** Maintenance packages can be negotiated post-project.
+**10.4 Maintenance Options:** Maintenance packages may be negotiated post-project.
 
 ---
 
 ## 11. LIMITATION OF LIABILITY
 
-**11.1 Liability Cap:** Total liability shall not exceed the total contract value.
+**11.1 Liability Cap:** Liability shall not exceed the total contract value of USD 2,333.
 
-**11.2 Exclusions:** ['Indirect, incidental, consequential damages', 'Loss of profits or business interruption']
+**11.2 Exclusions:** ['Indirect, consequential, or punitive damages', 'Loss of profits or business interruption']
 
 **11.3 Consequential Damages:** Parties shall not be liable for consequential damages.
 
@@ -220,11 +220,11 @@ Delays caused by unforeseen circumstances or scope changes will be communicated 
 
 ## 12. TERMINATION
 
-**12.1 Termination for Convenience:** Either party may terminate with 30 days written notice.
+**12.1 Termination for Convenience:** Either party may terminate this Agreement with 30 days written notice.
 
-**12.2 Termination for Cause:** Immediate termination if the other party breaches material terms and fails to cure within 15 days.
+**12.2 Termination for Cause:** Either party may terminate immediately for material breach, insolvency, or failure to cure breach within 10 days.
 
-**12.3 Effects of Termination:** Provider shall deliver all completed work, and Client shall pay for all work performed up to termination.
+**12.3 Effects of Termination:** Upon termination, the Provider shall deliver all completed work, and the Client shall pay for all work performed up to termination.
 
 **12.4 Survival:** ['Confidentiality', 'Intellectual Property rights', 'Dispute resolution provisions']
 
@@ -234,11 +234,11 @@ Delays caused by unforeseen circumstances or scope changes will be communicated 
 
 **13.1 Governing Law:** This Agreement shall be governed by the laws of [Jurisdiction].
 
-**13.2 Negotiation:** Parties shall attempt to resolve disputes amicably within 30 days.
+**13.2 Negotiation:** Parties shall attempt to resolve disputes amicably through good-faith negotiations for 30 days.
 
-**13.3 Mediation:** If unresolved, disputes shall be submitted to mediation.
+**13.3 Mediation:** If unresolved, disputes shall be submitted to mediation in [Location].
 
-**13.4 Arbitration/Litigation:** If mediation fails, disputes shall be finally resolved by binding arbitration or litigation in the courts of [Jurisdiction].
+**13.4 Arbitration/Litigation:** If mediation fails, disputes shall be finally resolved by binding arbitration or litigation in [Jurisdiction].
 
 ---
 
@@ -254,15 +254,15 @@ Any amendments must be in writing and signed by authorized representatives of bo
 
 **14.3 Assignment**
 
-Neither party shall assign this Agreement without prior written consent of the other.
+Neither party shall assign this Agreement without prior written consent.
 
 **14.4 Force Majeure**
 
-Neither party shall be liable for failure or delay caused by events beyond their reasonable control.
+Neither party shall be liable for delays or failure to perform due to causes beyond reasonable control.
 
 **14.5 Notices**
 
-Notices shall be delivered in writing via email or registered mail to the addresses specified.
+All notices shall be in writing and delivered via email or courier to the addresses specified herein.
 
 ---
 
@@ -270,15 +270,15 @@ Notices shall be delivered in writing via email or registered mail to the addres
 
 **Schedule A: Detailed Scope of Work**
 
-_See Scope of Work section above._
+_See Scope of Work section above_
 
 **Schedule B: Technical Specifications**
 
-_To be provided upon further technical discussion._
+_To be provided in separate Technical Specification document_
 
 **Schedule C: Payment Schedule**
 
-_Included in Payment Terms section above._
+_See Payment Terms section above_
 
 ---
 
