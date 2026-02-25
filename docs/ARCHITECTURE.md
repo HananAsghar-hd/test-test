@@ -23,20 +23,23 @@
 
 ## Executive Summary
 
-The system will be a cloud-hosted web application on Azure, comprising modules for project management, client feedback, and opportunity tracking. It will be designed with a modular, scalable architecture supporting secure multi-user access, with emphasis on flexibility given the minimal initial scope.
+The system is a lightweight, cloud-hosted project management portal supporting testing activities, client feedback, and opportunity tracking. It leverages Azure for hosting and AWS Credits for resource provisioning, emphasizing security, scalability, and ease of use.
 
 ### Key Decisions
 - Adopt a microservices architecture for modularity and scalability
-- Use Azure as the primary cloud platform for hosting and services
+- Use Azure as the primary hosting platform with AWS Credits for resource management
+- Implement RESTful APIs for system communication
+- Prioritize security with role-based access control and encryption
 
 ### Technology Highlights
-- Azure Cloud Platform
-- React.js for frontend
-- FastAPI (Python) for backend APIs
-- PostgreSQL for relational data
+- Azure Cloud Platform for hosting and deployment
+- React.js for frontend development
+- FastAPI (Python) for backend API services
+- PostgreSQL for relational data storage
 - Redis for caching
 - Kubernetes (AKS) for container orchestration
-- OAuth2/JWT for security
+- GitHub Actions for CI/CD pipelines
+- ELK stack for logging and monitoring
 
 ## System Architecture
 
@@ -44,102 +47,115 @@ The system will be a cloud-hosted web application on Azure, comprising modules f
 
 ### Architecture Overview
 
-The system consists of a frontend web application communicating via REST APIs with backend microservices for project management, feedback, and opportunity modules. Data is stored in PostgreSQL, with Redis caching. All services are containerized and deployed on Azure Kubernetes Service (AKS). External integrations include Azure hosting and AWS Credits for resource management.
+The architecture comprises a frontend SPA hosted on Azure CDN, communicating via REST APIs with backend microservices deployed on Azure Kubernetes Service (AKS). Data is stored in PostgreSQL, with Redis caching. Client feedback portal and opportunity modules are separate services. Monitoring and logging are centralized with ELK stack.
 
 ### System Components
 
 #### Frontend Web Application
 
-**Purpose:** User interface for project management, client feedback, and opportunity tracking
+**Purpose:** User interface for project management, feedback, and opportunity tracking
 
 **Responsibilities:**
-- Render UI
+- Render dashboards
 - Handle user interactions
 - Communicate with backend APIs
 
-**Technologies:** React.js, TypeScript
+**Technologies:** React.js, TypeScript, Redux
+
+#### API Gateway
+
+**Purpose:** Route requests to appropriate microservices and handle security/authentication
+
+**Responsibilities:**
+- Request routing
+- Authentication and authorization enforcement
+
+**Technologies:** NGINX or Azure API Management
 
 #### Project Management Service
 
-**Purpose:** Manage project schedules, milestones, and hours
+**Purpose:** Manage milestones, deadlines, progress
 
 **Responsibilities:**
-- Create/update schedules
-- Track milestones
-- Log hours
+- CRUD operations for project milestones
+- Progress tracking
 
 **Technologies:** FastAPI, Python
 
-#### Feedback & Approval Service
+#### Feedback Portal Service
 
-**Purpose:** Facilitate client review, feedback, and approval workflows
+**Purpose:** Handle client feedback and approvals
 
 **Responsibilities:**
-- Collect feedback
-- Track approval status
+- Feedback submission
+- Approval workflows
 
 **Technologies:** FastAPI, Python
 
-#### Opportunity Tracking Service
+#### Opportunity & Financial Service
 
-**Purpose:** Manage opportunity details and pipeline status
+**Purpose:** Manage opportunity data and stages
 
 **Responsibilities:**
-- Record opportunity info
-- Update status
+- Opportunity CRUD
+- Stage transitions
+- Financial data management
 
 **Technologies:** FastAPI, Python
 
 #### Database
 
-**Purpose:** Persistent storage for all data entities
+**Purpose:** Persistent storage of all system data
 
 **Responsibilities:**
-- Store project data
-- Store opportunity data
-- Store feedback logs
+- Store project, feedback, opportunity data
 
 **Technologies:** PostgreSQL
 
-#### Cache Layer
+#### Caching Layer
 
-**Purpose:** Improve performance for frequently accessed data
+**Purpose:** Improve performance for frequent read operations
 
 **Responsibilities:**
-- Cache project status, milestones
+- Cache project status, user sessions
 
 **Technologies:** Redis
 
-#### Infrastructure
+#### Container Orchestration
 
-**Purpose:** Deployment environment
+**Purpose:** Deploy and manage microservices
 
 **Responsibilities:**
-- Container orchestration
 - Scaling
-- Load balancing
+- Rolling updates
+- High availability
 
-**Technologies:** Azure Kubernetes Service (AKS), Azure Load Balancer
+**Technologies:** Azure Kubernetes Service (AKS)
+
+#### Monitoring & Logging
+
+**Purpose:** Ensure system health and security
+
+**Responsibilities:**
+- Collect logs
+- Monitor system metrics
+- Alerting
+
+**Technologies:** ELK Stack (Elasticsearch, Logstash, Kibana), Azure Monitor
 
 ### Data Flow
 
 #### User Interaction
 
-Client accesses the web app, which interacts with backend services via REST APIs to fetch/update project, feedback, and opportunity data.
+User interacts via frontend SPA, which sends REST requests to API Gateway. API Gateway routes to respective microservices, which interact with PostgreSQL and Redis as needed, returning data to frontend.
 
-1. User submits a request via frontend
-2. Frontend calls appropriate backend API
-3. Backend processes request, interacts with database/cache
-4. Response is returned to frontend and displayed
+#### Feedback Submission
 
-#### Data Persistence
+Client submits feedback via portal; data is stored in Feedback Service and persisted in PostgreSQL. Notifications sent via backend.
 
-Backend services persist data changes to PostgreSQL and update caches as needed.
+#### Opportunity Updates
 
-1. Backend receives data change request
-2. Writes to PostgreSQL
-3. Updates Redis cache
-4. Confirms operation success
+Sales updates opportunity data; stored in Opportunity Service, with updates reflected in dashboards.
 
 ## Technology Stack
 
@@ -147,40 +163,39 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 **Framework:** React.js
 
-*Justification:* React provides a flexible, component-based architecture suitable for dynamic, responsive UIs; widely supported and developer-friendly.
+*Justification:* React provides a flexible, component-based architecture suitable for dynamic dashboards and client portals, with strong community support.
 
 **Libraries:**
 
 | Library | Purpose |
 |---------|---------|
 | Redux | State management |
-| Axios | HTTP communication |
+| Axios | API communication |
 
 ### Backend
 
 **Framework:** FastAPI
 **Language:** Python
 
-*Justification:* FastAPI offers high performance, easy API development, and async support, suitable for scalable microservices.
+*Justification:* FastAPI offers high performance, easy async support, and rapid development, ideal for microservices and REST APIs.
 
 **Libraries:**
 
 | Library | Purpose |
 |---------|---------|
-| SQLAlchemy | ORM for database access |
-| PyJWT | JWT token handling |
-| OAuthLib | OAuth2 authentication |
+| SQLAlchemy | ORM for PostgreSQL |
+| Pydantic | Data validation |
 
 ### Database
 
 **Primary Database:** PostgreSQL
-*Justification:* Relational data with complex relationships, proven reliability, and strong support on Azure.
+*Justification:* Relational data with complex relationships, proven stability, and scalability.
 
 **Caching:** Redis
-*Justification:* Fast in-memory cache to reduce database load and improve response times.
+*Justification:* Fast in-memory caching to improve response times and reduce database load.
 
 **Search:** Elasticsearch
-*Justification:* Not prioritized initially; can be added later if search becomes complex.
+*Justification:* Optional, for advanced search capabilities if needed in future phases.
 
 ### Infrastructure
 
@@ -191,59 +206,59 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 ### DevOps
 
-**CI/CD:** Azure DevOps
+**CI/CD:** GitHub Actions
 **Containerization:** Docker
 **Orchestration:** Kubernetes (AKS)
 
-**Monitoring:** Azure Monitor, Prometheus
+**Monitoring:** Azure Monitor, ELK Stack
 
-**Logging:** Azure Log Analytics
+**Logging:** ELK Stack
 
 ### Third-Party Integrations
 
 | Service | Purpose | API Type |
 |---------|---------|----------|
-| Azure Cloud Services | Hosting and cloud management | REST |
+| Azure Active Directory | Authentication and role-based access control | OAuth2 |
 
 ## Security Architecture
 
 ### Authentication
 
-**Method:** OAuth2 with JWT tokens
-**Provider:** Azure AD B2C
+**Method:** OAuth2
+**Provider:** Azure Active Directory
 
 ### Authorization
 
 **Model:** RBAC
-**Implementation:** Role-based access control enforced at API level
+**Implementation:** Azure AD roles and claims enforced at API Gateway and microservices
 
 ### Data Protection
-- Encryption at rest via Azure Storage encryption
-- Encryption in transit via HTTPS/TLS
-- Data masking for sensitive info
+- Encryption at rest: Azure Storage encryption, PostgreSQL encryption
+- Encryption in transit: TLS 1.2+ for all communications
+- Data masking: Sensitive data masked in logs and UI
 
-**Compliance:** GDPR, ISO 27001
+**Compliance:** GDPR
 
 ### Security Measures
-- Secure API Gateway
+- Role-based access control
 - Regular security audits
-- Least privilege access
+- Secure API gateway with rate limiting and IP filtering
 
 ## Scalability & Reliability
 
-**Scaling Strategy:** Auto-scaling based on CPU/memory load
+**Scaling Strategy:** Auto-scaling on AKS based on CPU/memory metrics
 **Load Balancing:** Azure Load Balancer / Application Gateway
 
 ### High Availability
 
-**Approach:** Multi-AZ deployment
-**Failover:** Automatic failover with Azure Load Balancer
+**Approach:** Multi-AZ deployment for AKS and PostgreSQL
+**Failover:** Automated failover with Azure services
 
 ### Disaster Recovery
 
-**RPO:** Minimal data loss with daily backups
-**RTO:** Under 2 hours
-**Backup Strategy:** Automated backups to Azure Blob Storage
+**RPO:** 24 hours
+**RTO:** 4 hours
+**Backup Strategy:** Daily backups with geo-redundancy
 
 ## Integration Architecture
 
@@ -257,16 +272,16 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 | System | Type | Data Exchanged |
 |--------|------|----------------|
-| Azure AD | OAuth2 | Authentication tokens, user info |
+| Azure AD | OAuth2 | User identity, roles |
 
 ### Event Architecture
 
 **Pattern:** Request-response
-**Message Broker:** None initially; Kafka or Azure Event Grid can be added later
+**Message Broker:** None (synchronous REST calls)
 
 ## Development Approach
 
-**Methodology:** Agile Scrum
+**Methodology:** Agile
 **Sprint Duration:** 2 weeks
 **Branching Strategy:** GitFlow
 
@@ -274,9 +289,9 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 ### Testing Strategy
 
-**Unit Testing:** Pytest
-**Integration Testing:** Test suites for API endpoints
-**E2E Testing:** Playwright
+**Unit Testing:** Pytest (backend), Jest (frontend)
+**Integration Testing:** API tests with Postman/Newman
+**E2E Testing:** Cypress
 **Coverage Target:** 80%
 
 ## Timeline Estimate
@@ -285,52 +300,52 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 ### Development Phases
 
-#### Phase 1: Setup & Core Development
+#### Phase 1: Requirements & Planning
+
+**Duration:** 2 weeks
+
+**Features:**
+- Clarify scope, finalize requirements, environment setup
+
+**Deliverables:**
+- Project plan
+- Technical environment ready
+
+#### Phase 2: Core Development
+
+**Duration:** 6 weeks
+
+**Features:**
+- Develop project management dashboard
+- Client feedback portal
+
+**Deliverables:**
+- MVP dashboards
+- Basic feedback workflows
+
+#### Phase 3: Opportunity Module & Testing
 
 **Duration:** 4 weeks
 
 **Features:**
-- Project Management API
-- Client Feedback API
-- Opportunity API
+- Opportunity & financial tracking module
+- System testing
 
 **Deliverables:**
-- Initial backend services
-- Basic frontend UI
-
-#### Phase 2: Frontend & Integration
-
-**Duration:** 4 weeks
-
-**Features:**
-- UI refinement
-- API integration
-- Authentication setup
-
-**Deliverables:**
-- Functional web app with auth
-
-#### Phase 3: Testing & Deployment
-
-**Duration:** 4 weeks
-
-**Features:**
-- Testing, bug fixing, deployment
-
-**Deliverables:**
-- Deployed system
-- Documentation
+- Opportunity module deployed
+- Test reports
 
 ### Milestones
 
 | Milestone | Week | Criteria |
 |-----------|------|----------|
-| MVP Release | 10 | Core features implemented, Initial testing completed |
+| MVP Release | 10 | Core features functional, Initial testing completed |
+| Full Deployment | 14 | All modules integrated, User acceptance testing passed |
 
 ### Timeline Risks
 
-- **Delayed requirement clarification** (+2 weeks)
-  - Mitigation: Early stakeholder engagement
+- **Unclear requirements delay** (+2 weeks)
+  - Mitigation: Early clarification sessions
 
 ## Pricing Estimate
 
@@ -339,13 +354,13 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 ### Development Costs
 
-**Total:** $165,000.00
+**Total:** $135,000.00
 
 | Phase | Cost | Details |
 |-------|------|---------|
-| Phase 1 | $60,000.00 | Backend and frontend core development |
-| Phase 2 | $60,000.00 | UI refinement, API integration, auth setup |
-| Phase 3 | $45,000.00 | Testing, deployment, documentation |
+| Phase 1 | $15,000.00 | Requirements, environment setup |
+| Phase 2 | $75,000.00 | Core dashboards, feedback portal |
+| Phase 3 | $45,000.00 | Opportunity module, testing |
 
 ### Infrastructure Costs
 
@@ -363,7 +378,7 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 
 | Service | Tier | Monthly Cost |
 |---------|------|--------------|
-| Azure AD B2C | - | $50.00 |
+| Azure Active Directory | - | $50.00 |
 
 ### Payment Terms
 
@@ -372,13 +387,13 @@ Backend services persist data changes to PostgreSQL and update caches as needed.
 | Milestone | Percentage |
 |-----------|------------|
 | Project Kickoff | 30% |
-| MVP Completion | 40% |
-| Final Delivery | 30% |
+| MVP Delivery | 40% |
+| Final Deployment | 30% |
 
 ### Exclusions
 
-- Post-deployment support beyond initial warranty period
-- Third-party licenses beyond initial setup
+- Hardware procurement
+- Post-deployment support beyond warranty period
 
 ---
 
