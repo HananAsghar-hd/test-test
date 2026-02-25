@@ -8,11 +8,11 @@
 
 ## Project Overview
 
-**Technology Summary:** Full-stack web application with Python FastAPI backend, React frontend, PostgreSQL, Redis, and Azure cloud services. CI/CD managed via Azure DevOps, orchestrated on AKS.
+**Technology Summary:** Full-stack web application with Python FastAPI backend, React frontend, deployed on Azure Kubernetes Service, utilizing Docker, Redis, Elasticsearch, and Azure cloud services.
 
 **Complexity Level:** high
 
-**Recommended Team Size:** 4-6 developers
+**Recommended Team Size:** 5-7 developers
 
 ## Required Skills
 
@@ -20,36 +20,38 @@
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| React.js | intermediate to advanced | critical | Component-based UI, Redux state management |
-| JavaScript/TypeScript | intermediate | important | For React development |
+| React.js | intermediate to advanced | critical | Core for UI development, state management with Redux |
+| JavaScript/TypeScript | intermediate | important | Type safety and modern JS features |
 
 ### Backend
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Python (FastAPI) | intermediate to advanced | critical | API development, async programming |
-| JWT/OAuth2 | intermediate | critical | Authentication and authorization |
+| Python (FastAPI) | intermediate to advanced | critical | API development, async support |
+| SQLAlchemy | intermediate | important | ORM for PostgreSQL |
 
 ### Database
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| PostgreSQL | intermediate | critical | Relational data modeling |
+| PostgreSQL | intermediate | critical | Relational database management |
 | Redis | intermediate | important | Caching layer |
+| Elasticsearch | basic to intermediate | nice-to-have | Optional for advanced search |
 
 ### DevOps
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Azure DevOps | intermediate | critical | CI/CD pipelines, release management |
-| Kubernetes (AKS) | intermediate | critical | Container orchestration |
 | Docker | intermediate | important | Containerization of services |
+| Kubernetes (AKS) | intermediate | critical | Deployment and orchestration |
+| GitHub Actions | intermediate | critical | CI/CD pipelines |
+| Azure Cloud Services | intermediate | important | Azure Blob Storage, CDN, AKS |
 
 ### Soft Skills
 
 | Skill | Level | Importance | Notes |
 |-------|-------|------------|-------|
-| Communication | - | critical | Effective collaboration in a distributed team |
+| Communication | - | critical | Effective collaboration and documentation |
 | Problem-solving | - | critical | Troubleshooting and debugging |
 
 ## Team Composition
@@ -58,57 +60,57 @@
 
 | Role | Count | Key Skills | Seniority |
 |------|-------|------------|-----------|
-| Tech Lead | 1 | Architecture, Code review, Technical decisions | Senior |
-| Frontend Developer | 2 | React.js, JavaScript/TypeScript, UI/UX | Mid/Senior |
-| Backend Developer | 2 | FastAPI, Python, JWT/OAuth2 | Mid/Senior |
-| DevOps Engineer | 1 | Azure DevOps, Kubernetes, Docker | Mid/Senior |
+| Tech Lead | 1 | Architecture, Code review, Azure AKS, CI/CD | Senior |
+| Frontend Developer | 2 | React.js, TypeScript, Redux | Mid/Senior |
+| Backend Developer | 2 | FastAPI, Python, SQLAlchemy | Mid/Senior |
+| DevOps Engineer | 1 | Kubernetes, Docker, CI/CD, Azure | Mid/Senior |
 | QA Engineer | 1 | Test automation, Manual testing | Mid |
 
 ### Optional Roles
 
-- **UI/UX Designer** (1) - Design improvements
-  - Key Skills: Design tools, User experience
+- **UI/UX Designer** (1) - Design and improve user experience
+  - Key Skills: Design tools, User research
 
 ## Skill Development
 
 ### Learning Resources
 
-**React.js:**
+**React:**
 - Official React docs
 - React patterns course
 
-**FastAPI:**
-- FastAPI documentation
-- Async programming tutorials
-
 **Kubernetes:**
 - Kubernetes official docs
-- KubeCon videos
+- Azure AKS tutorials
+
+**FastAPI:**
+- FastAPI official docs
+- Async Python tutorials
 
 ### Recommended Certifications
 
 | Certification | Relevance |
 |---------------|-----------|
-| Azure Solutions Architect | Azure cloud architecture and deployment |
-| Certified Kubernetes Administrator (CKA) | Container orchestration expertise |
+| Azure Solutions Architect | Azure infrastructure and deployment |
+| Certified Kubernetes Administrator (CKA) | Kubernetes management |
 
 ## Knowledge Transfer
 
-**Onboarding Duration:** 1-2 weeks
+**Onboarding Duration:** 2 weeks
 
 ### Key Areas
 
 - Codebase walkthrough
 - Architecture overview
-- CI/CD pipeline setup
-- Azure cloud services overview
-- Development and deployment workflows
+- Deployment pipelines
+- Azure cloud setup
 
 ### Documentation to Review
 
-- Architecture design docs
-- API specifications
-- Onboarding guide
+- Architecture diagrams
+- API documentation
+- CI/CD process documentation
+- Azure AKS setup guides
 
 ---
 
